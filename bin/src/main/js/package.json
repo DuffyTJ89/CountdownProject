@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "build": "webpack --watch",
+    "build:prod": "webpack -p",
+    "serve": "live-server --port=9090 ../resources/static"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.11",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "inline-style-prefixer": "5.0.3",
+    "live-server": "^1.2.1",
+    "webpack": "4.28.3",
+    "webpack-cli": "^3.1.2"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}
