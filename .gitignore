@@ -2,7 +2,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 
 node_modules
-
+output.txt
+outputCode.txt
 
 ### STS ###
 .apt_generated
