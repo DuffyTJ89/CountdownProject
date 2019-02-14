@@ -22,9 +22,10 @@ public class CheckValidWord {
 				CompareWordToLetters.compare(userWord); 
 				
 			} else {
-				System.out.println("Invalid Word");
+				System.out.println("Invalid Word, you will be given a new set of letters now");
 				// TODO return user to enter word again
-				System.exit(0);
+				CreateGame.start();
+				//System.exit(0); //Don't let the user continue with an invalid word
 			}
 
 			s.close();

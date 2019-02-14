@@ -131,7 +131,11 @@ public class CompareWordToLetters {
 
 		// *************************//
 		// add the user score up
-		System.out.println("Total score is : " + userScore);
+		System.out.println("Total score for this round is : " + userScore);
+		Runner.gameScore += userScore; //update the overall game score with the round score
+		System.out.println("Overall game score : " + Runner.gameScore);
+
+		Runner.main(null);//move to the next round
 		
 	}
 
