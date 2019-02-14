@@ -1,8 +1,5 @@
 package ie.gmit.sw.Game;
 
-//import java.util.Scanner;
-
-import ch.qos.logback.core.net.SyslogOutputStream;
 
 public class Runner {
 
@@ -20,14 +17,15 @@ public class Runner {
 		if(roundNum>5){
 			System.out.println("Game over");
 			System.out.println("After " + (roundNum -1)+ " rounds. Total Game Score " + gameScore);
+
+			//TODO let the player play again
+			// System.out.println("Play Again?");
+			// System.out.println("Y/N");
 		}
 		else {
 
 			System.out.println("Round " + roundNum+ " / 5");
 			CreateGame.start();// start the game and display the 10 Random letters to the user
-
-			// System.out.println("Play Again?");
-			// System.out.println("Y/N");
 		}
 	}
 
