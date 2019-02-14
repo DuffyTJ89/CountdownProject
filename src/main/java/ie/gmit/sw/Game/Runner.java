@@ -17,13 +17,13 @@ public class Runner {
 
 
 
-		if(roundNum>=5){
+		if(roundNum>5){
 			System.out.println("Game over");
-			System.out.println("Total Game Score " + gameScore);
+			System.out.println("After " + (roundNum -1)+ " rounds. Total Game Score " + gameScore);
 		}
 		else {
 
-			System.out.println("Round " + roundNum + " / 5");
+			System.out.println("Round " + roundNum+ " / 5");
 			CreateGame.start();// start the game and display the 10 Random letters to the user
 
 			// System.out.println("Play Again?");
