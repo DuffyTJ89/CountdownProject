@@ -13,7 +13,7 @@ public class CountdownTimer {
             public void run() {
 
                 try {
-                    FileInputStream fs = new FileInputStream("C:\\Users\\Thomas\\Desktop\\NewCountdown\\ScrabbleProject\\src\\main\\java\\ie\\gmit\\sw\\Game\\CountdownClock.mp3");
+                    FileInputStream fs = new FileInputStream("C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Scrabble Project All\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\Game\\CountdownClock.mp3");
                     Player player = new Player(fs);
                     player.play();
 
