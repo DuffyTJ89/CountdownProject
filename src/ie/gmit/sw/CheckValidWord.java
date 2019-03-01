@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CheckValidWord {
 
-	static void check() {
+	static void check(int gameScore) {
 
 		try {
 			Scanner s = new Scanner(new File("C:\\Users\\Thomas\\Desktop\\NewCountdown\\ScrabbleProject\\src\\main\\java\\ie\\gmit\\sw\\Game\\outputCode.txt"));
@@ -19,7 +19,7 @@ public class CheckValidWord {
 				Scanner sc = new Scanner(new File("C:\\Users\\Thomas\\Desktop\\NewCountdown\\ScrabbleProject\\src\\main\\java\\ie\\gmit\\sw\\Game\\output.txt"));
 				String userWord = sc.nextLine();
 				
-				CompareWordToLetters.compare(userWord); 
+				CompareWordToLetters.compare(userWord, gameScore); 
 				
 			} else {
 				System.out.println("Invalid Word, you will be given a new set of letters now");

@@ -14,7 +14,7 @@ public class CompareWordToLetters {
 		
 	}
 	
-	static void compare(String userWord){
+	static void compare(String userWord, int gameScore){
 		
 		userWord = userWord.toUpperCase();
 
@@ -132,8 +132,10 @@ public class CompareWordToLetters {
 		// *************************//
 		// add the user score up
 		System.out.println("Total score for this round is : " + userScore);
-		MainGame.gameScore += userScore; //update the overall game score with the round score
-		System.out.println("Overall game score : " + MainGame.gameScore);
+		//MainGame.gameScore += userScore; //update the overall game score with the round score
+		
+		RoundsAndScoring.updateUserGameScore(userScore, gameScore);
+		//System.out.println("Overall game score : " + MainGame.gameScore);
 
 		//RoundLimit.checkRoundNum();//move to the next round
 		

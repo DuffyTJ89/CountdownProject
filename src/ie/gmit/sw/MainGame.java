@@ -7,19 +7,19 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
+//import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet("/newGame")
 public class MainGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	static int roundNum = 0;
-	static int gameScore = 0;
+	
 	//static String roundNumString = "";
 	boolean ChechkedRoundNum;
 	
@@ -30,14 +30,23 @@ public class MainGame extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String yourName = request.getParameter("userName");
 		PrintWriter writer = response.getWriter();
+		
+		writer.println("<body style='background-color:#07205A;'>");
+		
 		writer.println("<h1>Hello " + yourName + "</h1>");
 		
 
 		//Runner.main(null);
 		
-		ChechkedRoundNum = RoundLimit.checkRoundNumLess5(roundNum);
+		int roundNum = RoundsAndScoring.setUserRoundNum();//Initialize the user's round number to zero
+		int gameScore = RoundsAndScoring.setUserGameScore();
+		
+		
+		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
+		ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
 		
 		if (ChechkedRoundNum == true)
 		{
@@ -47,6 +56,8 @@ public class MainGame extends HttpServlet {
 			
 			writer.println("<h3> Here are your random letters : " + randomLetters +" </h3>");
 			
+			//CheckValidWord.check(gameScore);
+			
 			
 			
 		
@@ -55,7 +66,7 @@ public class MainGame extends HttpServlet {
 			writer.println("Game over \n" + "After " + (roundNum - 1) + " rounds. Total Game Score " + gameScore);
 		}
 		
-		String test = "testing";
+		//String test = "testing";
 		
 		//writer.println("<h2>Hello " + test + "</h2>");
 		
