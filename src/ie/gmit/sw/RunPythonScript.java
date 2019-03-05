@@ -30,7 +30,7 @@ public class RunPythonScript {
         {
             Thread.currentThread().interrupt();
         }
-		CheckValidWord.check(); // check the response from the python script to see if it is valid or not
+		//CheckValidWord.check(); // check the response from the python script to see if it is valid or not
 	}// end run()
 
 }// end class RunPythonScript

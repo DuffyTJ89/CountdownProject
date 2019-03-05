@@ -7,12 +7,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 //import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/newGame")
@@ -23,6 +26,7 @@ public class MainGame extends HttpServlet {
 	//static String roundNumString = "";
 	boolean ChechkedRoundNum;
 	
+	
 
 	public MainGame() {
 		super();
@@ -30,6 +34,10 @@ public class MainGame extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		//HttpSession sessionRoundNum = request.getSession();
+		//HttpSession sessionRandletters = request.getSession();
+		//HttpSession session3 = request.getSession(false);
 		
 		String yourName = request.getParameter("userName");
 		PrintWriter writer = response.getWriter();
@@ -50,11 +58,36 @@ public class MainGame extends HttpServlet {
 		
 		if (ChechkedRoundNum == true)
 		{
-			writer.println("<h3> Round : " + roundNum + "/5 </h3>");
+			//writer.println("<h3> Round : " + roundNum + "/5 </h3>");
 			
 			List<String> randomLetters = GenerateRandomLetters.list();
 			
-			writer.println("<h3> Here are your random letters : " + randomLetters +" </h3>");
+			//writer.println("<h3> Here are your random letters : " + randomLetters +" </h3>");
+			
+			//pass round num, randletters
+			
+			//sessionRoundNum.setAttribute("sRoundNum", roundNum);
+			//sessionRandletters.setAttribute("sRandLetters", randomLetters);
+			
+			//String id = "123";
+			//response.sendRedirect("toNexturl.jsp?id="+id);
+			
+			request.setAttribute("sRoundNum", roundNum);
+			request.setAttribute("sRandomLetters", randomLetters);
+			
+			ServletContext ctx = getServletContext();
+			
+			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/NewGame.jsp");
+			dispatcher.forward(request, response);
+			
+			//response.sendRedirect("NewGame.jsp");
+			//request.getRequestDispatcher("NewGame.jsp").forward(request, response);
+		
+		   
+			
+			//System.out.println("Here");
+			
+			//UserWord.takeInput();
 			
 			//CheckValidWord.check(gameScore);
 			

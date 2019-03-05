@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +7,17 @@
 </head>
 <body>
 
+ 
+
 <h1>NEW GAME</h1>
 
-<% System.out.println("TESting"); %>
+<!-- sRoundNum -->
+
+<h3> Round is ${sRoundNum}</h3>
+
+<h3> Your Letters are ${sRandomLetters}</h3>
+
+
 
 </body>
 </html>
