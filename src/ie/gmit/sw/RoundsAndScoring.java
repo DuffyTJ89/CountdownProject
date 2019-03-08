@@ -1,12 +1,14 @@
 package ie.gmit.sw;
 
 public class RoundsAndScoring {
+	
+	static int cScore;
 
 	static int setUserRoundNum() {
 
 		int roundNum = 0;
 		
-		System.out.println("Round should be 0 : " + roundNum);
+		//System.out.println("Round should be 0 : " + roundNum);
 
 		return roundNum;
 	}
@@ -18,21 +20,29 @@ public class RoundsAndScoring {
 		return gameScore;
 	}
 	
+
+	
+	
+	
 	static int updateUserRoundNum(int roundNum) {
 
 		roundNum++;
 		
-		System.out.println("Round shoule be 1 :" + roundNum);
+		//System.out.println("Round shoule be 1 :" + roundNum);
 
 		return roundNum;
 	}
 
 	static int updateUserGameScore(int roundScore, int gameScore) {
 
-		gameScore = roundScore + gameScore;
+		 cScore = roundScore + gameScore;
+		
+		
 
-		return gameScore;
+		return cScore;
 	}
+	
+	
 	
 
 	static boolean checkRoundNumLess5(int roundNum) {

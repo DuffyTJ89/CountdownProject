@@ -11,9 +11,10 @@
 </div>
 
 <!-- sRoundNum sName -->
-<h5 style="text-align:center;color:white;"> Welcome ${sName}</h5>
+<h5 style="text-align:center;color:white; "> Welcome ${sName}</h5>
 
 <h3 style="text-align:center;color:white;"> Round ${sRoundNum}/5</h3>
+<h3 style="text-align:center;color:white;"> GameScore : ${sGameScore}/5</h3>
 
 <h3 style="text-align:center;color:white;"> Your Letters are </h3><br>
 <p  style="text-align:center;color:white;"> ${sRandomLetters}</p><br>

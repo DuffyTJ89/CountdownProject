@@ -72,10 +72,18 @@ public class SetUpGame extends HttpServlet {
 			//String id = "123";
 			//response.sendRedirect("toNexturl.jsp?id="+id);
 			
-			request.setAttribute("sRoundNum", roundNum);
-			request.setAttribute("sRandomLetters", randomLetters);
-			request.setAttribute("sName", yourName);
+			HttpSession session = request.getSession();
+		      
 			
+			request.setAttribute("sRoundNum", roundNum);
+			session.setAttribute("sRoundNum",roundNum );
+			request.setAttribute("sRandomLetters", randomLetters);
+			session.setAttribute("sRandomLetters",randomLetters );
+			request.setAttribute("sName", yourName);
+			session.setAttribute("sName",yourName );
+			request.setAttribute("sGameScore", gameScore);
+			session.setAttribute("sGameScore",gameScore );
+					
 			ServletContext ctx = getServletContext();
 			
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/NewGame.jsp");
