@@ -5,15 +5,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class UserWord {
+public class UserWordToFile {
 
-	static void takeInput() {
+	static void takeInput(String userWord) {
 
 		// take user input for word
-		Scanner sc = new Scanner(System.in);
+		//Scanner sc = new Scanner(System.in);
 
-		System.out.println("Enter your word : ");
-		String userWord = sc.nextLine();
+		//System.out.println("Enter your word : ");
+		//String userWord = sc.nextLine();
 
 
 		// print the user word to a text file, this will be used by the python script to
@@ -36,7 +36,7 @@ public class UserWord {
 		} // end finally
 
 		// ** Move onto the next part **//
-		RunPythonScript.run();// run the python script to check the user word against the dictionary API
-		sc.close();
+		//RunPythonScript.run();// run the python script to check the user word against the dictionary API
+		//sc.close();
 	}// end takeINput
 }// end class userWord

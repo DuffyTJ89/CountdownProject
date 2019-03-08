@@ -1,115 +1,69 @@
-//Resources:
-// https://www.codejava.net/coding/java-servlet-and-jsp-hello-world-tutorial-with-eclipse-maven-and-apache-tomcat
-
 package ie.gmit.sw;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-//import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-
-@WebServlet("/newGame")
+/**
+ * Servlet implementation class MainGame
+ */
+@WebServlet("/MainGame")
 public class MainGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public MainGame() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	
-	//static String roundNumString = "";
-	boolean ChechkedRoundNum;
-	
-	
-
-	public MainGame() {
-		super();
-	}// end NewGam()
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		//HttpSession sessionRoundNum = request.getSession();
-		//HttpSession sessionRandletters = request.getSession();
-		//HttpSession session3 = request.getSession(false);
-		
-		String yourName = request.getParameter("userName");
+		String uGuess = request.getParameter("userGuess");
 		PrintWriter writer = response.getWriter();
 		
 		writer.println("<body style='background-color:#07205A;'>");
 		
-		writer.println("<h1>Hello " + yourName + "</h1>");
+		writer.println("<h3 style=\"text-align:center;color:white;\">Word guessed " + uGuess + "</h3>");
 		
-
-		//Runner.main(null);
+		UserWordToFile.takeInput(uGuess);
+		//System.out.println("Checking if word is valid...");
+		writer.println("<h3 style=\"text-align:center;color:white;\">Checking if word is valid... </h3>");
+		boolean PyScriptResponse = RunPythonScript.run();// run the python script to check the user word against the dictionary API
 		
-		int roundNum = RoundsAndScoring.setUserRoundNum();//Initialize the user's round number to zero
-		int gameScore = RoundsAndScoring.setUserGameScore();
-		
-		
-		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
-		ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
-		
-		if (ChechkedRoundNum == true)
+		if (PyScriptResponse = true)
 		{
-			//writer.println("<h3> Round : " + roundNum + "/5 </h3>");
-			
-			List<String> randomLetters = GenerateRandomLetters.list();
-			
-			//writer.println("<h3> Here are your random letters : " + randomLetters +" </h3>");
-			
-			//pass round num, randletters
-			
-			//sessionRoundNum.setAttribute("sRoundNum", roundNum);
-			//sessionRandletters.setAttribute("sRandLetters", randomLetters);
-			
-			//String id = "123";
-			//response.sendRedirect("toNexturl.jsp?id="+id);
-			
-			request.setAttribute("sRoundNum", roundNum);
-			request.setAttribute("sRandomLetters", randomLetters);
-			
-			ServletContext ctx = getServletContext();
-			
-			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/NewGame.jsp");
-			dispatcher.forward(request, response);
-			
-			//response.sendRedirect("NewGame.jsp");
-			//request.getRequestDispatcher("NewGame.jsp").forward(request, response);
-		
-		   
-			
-			//System.out.println("Here");
-			
-			//UserWord.takeInput();
-			
-			//CheckValidWord.check(gameScore);
-			
-			
-			
-		
+			//writer.println("<h3 style=\"text-align:center;color:white;\">Waiting on Oxford Dictonary  </h3>");
+			//TODO pass the current gamescore
+			//CheckValidWord.check();
 		}
-		else {
-			writer.println("Game over \n" + "After " + (roundNum - 1) + " rounds. Total Game Score " + gameScore);
+		else
+		{
+			
 		}
 		
-		//String test = "testing";
 		
-		//writer.println("<h2>Hello " + test + "</h2>");
 		
-		writer.close();
-	}// end doPost
-	
-	/*
-	static void RanLet(String randLet) {
-		PrintWriter write = new PrintWriter(randLet);
-		write.println("<h1>Hello " + randLet + "</h1>");
 	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-}// end class NewGame
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

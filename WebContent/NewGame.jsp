@@ -3,19 +3,27 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Online Countdown</title>
 </head>
-<body>
+<body bgcolor="#07205A">
+<div style="text-align:center;">
+	<img src="C:\Users\Thomas\eclipse-workspace\JSPCountdown\Countdown\Img\CountDownLogo.png" alt="CountdownLogo">
+</div>
 
- 
+<!-- sRoundNum sName -->
+<h5 style="text-align:center;color:white;"> Welcome ${sName}</h5>
 
-<h1>NEW GAME</h1>
+<h3 style="text-align:center;color:white;"> Round ${sRoundNum}/5</h3>
 
-<!-- sRoundNum -->
+<h3 style="text-align:center;color:white;"> Your Letters are </h3><br>
+<p  style="text-align:center;color:white;"> ${sRandomLetters}</p><br>
 
-<h3> Round is ${sRoundNum}</h3>
 
-<h3> Your Letters are ${sRandomLetters}</h3>
+
+<form style="text-align:center;color:white;" action="MainGame" method="post">
+Your word : <input type="text" name="userGuess" value="">
+<input type="submit" value="Submit">
+</form>
 
 
 
