@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Results</title>
 </head>
 <body bgcolor="#07205A">
 <div style="text-align:center;">

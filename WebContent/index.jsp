@@ -29,5 +29,15 @@
 </form>
 
 
+
+<button style="text-align:center;color:red;" onclick="myFunction()">RULES</button>
+
+<script>
+function myFunction() {
+  window.open("rules.jsp");
+}
+</script>
+
+
 </body>
 </html>
