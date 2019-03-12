@@ -19,11 +19,13 @@
 					session.setAttribute("sName", yourName);
 					request.setAttribute("sGameScore", gameScore);
 					session.setAttribute("sGameScore", gameScore);
+					sUserWord
 	 -->
 	 
 	 <h5 style="text-align:center;color:white; "> ${sName}, your results :</h5>
 	 
 	 <h3 style="text-align:center;color:white;"> Round : ${sRoundNum}/5</h3>
+	 <h3 style="text-align:center;color:white;"> Your word : ${sUserWord}</h3>
 	 <h3 style="text-align:center;color:white;"> GameScore : ${sGameScore}</h3>
 	 
 	 <button style="text-align:center;color:red;" type="button" onclick="alert('GOING')">Move to next round</button>

@@ -6,6 +6,7 @@ import java.util.Set;
 public class CompareWordToLetters {
 	
 	static String wordString="";
+	static String userWordFinal="";
 	
 	public static void listToString(String noListString) {
 		// TODO Auto-generated method stub
@@ -14,11 +15,21 @@ public class CompareWordToLetters {
 		
 	}
 	
+	public static void userWord(String uWord) {
+		
+		userWordFinal = uWord;
+		
+	}
+	
 	static int compare(String userWord, int gameScore){
 		
 		userWord = userWord.toUpperCase();
-
+		
+		
+		//TODO print this line to the results page
 		System.out.println("Your answer of ' " + userWord + " ' uses  ");
+		
+		userWord(userWord);
 
 		// System.out.println("without list "+ noListString);
 

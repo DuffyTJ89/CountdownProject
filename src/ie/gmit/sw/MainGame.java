@@ -115,6 +115,10 @@ public class MainGame extends HttpServlet {
 					// response.sendRedirect("toNexturl.jsp?id="+id);
 
 					// HttpSession session = request.getSession();
+					
+					String userWrod = CompareWordToLetters.userWordFinal;
+					
+					session.setAttribute("sUserWord", userWrod);
 
 					request.setAttribute("sRoundNum", roundNum);
 					session.setAttribute("sRoundNum", roundNum);
