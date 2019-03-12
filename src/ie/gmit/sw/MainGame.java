@@ -122,8 +122,8 @@ public class MainGame extends HttpServlet {
 					session.setAttribute("sRandomLetters", randomLetters);
 					request.setAttribute("sName", yourName);
 					session.setAttribute("sName", yourName);
-					request.setAttribute("sGameScore", gameScore);
-					session.setAttribute("sGameScore", gameScore);
+					request.setAttribute("sGameScore", currentScore);
+					session.setAttribute("sGameScore", currentScore);
 
 					ServletContext ctx = getServletContext();
 
