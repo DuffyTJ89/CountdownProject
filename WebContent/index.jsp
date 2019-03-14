@@ -29,14 +29,23 @@
 </form>
 
 
+<p style="text-align:center;">
 
-<button style="text-align:center;color:red;" onclick="myFunction()">RULES</button>
+<button style="text-align:center;color:red;" onclick="rules()">Rules</button> <br/><br/>
+
+<button style="text-align:center;color:red;" onclick="hScores()">HighScores</button>
+
 
 <script>
-function myFunction() {
+function rules() {
   window.open("rules.jsp");
 }
+
+function hScores() {
+	  window.open("highScores.jsp");
+}
 </script>
+</p>
 
 
 </body>

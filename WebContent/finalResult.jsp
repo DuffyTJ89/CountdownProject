@@ -26,18 +26,12 @@
 					<input type="submit" value="Submit">
 </form>
 	 -->
+	  <h5 style="text-align:center;color:white; "> GAME OVER :</h5>
+	 <h2 style="text-align:center;color:white; "> ${sName}, your results :</h2>
 	 
-	 <h5 style="text-align:center;color:white; "> ${sName}, your results :</h5>
+	 <h3 style="text-align:center;color:white;"> Final GameScore : ${sGameScore}</h3>
 	 
-	 <h3 style="text-align:center;color:white;"> Round : ${sRoundNum}/5</h3>
-	 <h3 style="text-align:center;color:white;"> Your word : ${sUserWord}</h3>
-	 <h3 style="text-align:center;color:white;"> GameScore : ${sGameScore}</h3>
-	 
-	<!-- <button style="text-align:center;color:red;" type="button" action="FirstRunGame" method="post">Move to next round</button> -->
-	 
-	 <form style="text-align:center;" action="ContinueGame" method="post">
-    	<input type="submit" name="button1" value="Move to next round" />
-	</form>
+	
 	 
 	 
 

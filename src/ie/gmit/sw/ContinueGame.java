@@ -48,16 +48,23 @@ public class ContinueGame extends HttpServlet {
 		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
 
 		boolean ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
+		
+		session.setAttribute("sRoundNum", roundNum);
+		
+		session.setAttribute("sName", yourName);
+		session.setAttribute("sGameScore", gameScore);
 
 		if (ChechkedRoundNum == true) {
 
 			List<String> randomLetters = GenerateRandomLetters.list();
 			
-			
-			session.setAttribute("sRoundNum", roundNum);
 			session.setAttribute("sRandomLetters", randomLetters);
-			session.setAttribute("sName", yourName);
-			session.setAttribute("sGameScore", gameScore);
+			
+			
+//			session.setAttribute("sRoundNum", roundNum);
+//			session.setAttribute("sRandomLetters", randomLetters);
+//			session.setAttribute("sName", yourName);
+//			session.setAttribute("sGameScore", gameScore);
 			
 			ServletContext ctx = getServletContext();
 
@@ -66,6 +73,11 @@ public class ContinueGame extends HttpServlet {
 
 		} else {
 			writer.println("Game over \n" + "After " + (roundNum - 1) + " rounds. Total Game Score " + gameScore);
+			
+			ServletContext ctx = getServletContext();
+
+			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
+			dispatcher.forward(request, response);
 		}
 
 	}
