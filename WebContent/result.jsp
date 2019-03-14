@@ -20,6 +20,11 @@
 					request.setAttribute("sGameScore", gameScore);
 					session.setAttribute("sGameScore", gameScore);
 					sUserWord
+					
+					<form style="text-align:center;color:white;" action="FirstRunGame" method="post">
+						Your word : <input type="text" name="userGuess" value="">
+					<input type="submit" value="Submit">
+</form>
 	 -->
 	 
 	 <h5 style="text-align:center;color:white; "> ${sName}, your results :</h5>
@@ -28,7 +33,11 @@
 	 <h3 style="text-align:center;color:white;"> Your word : ${sUserWord}</h3>
 	 <h3 style="text-align:center;color:white;"> GameScore : ${sGameScore}</h3>
 	 
-	 <button style="text-align:center;color:red;" type="button" onclick="alert('GOING')">Move to next round</button>
+	<!-- <button style="text-align:center;color:red;" type="button" action="FirstRunGame" method="post">Move to next round</button> -->
+	 
+	 <form action="ContinueGame" method="post">
+    	<input type="submit" name="button1" value="Move to next round" />
+	</form>
 	 
 	 
 

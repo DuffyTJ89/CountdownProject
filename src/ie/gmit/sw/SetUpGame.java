@@ -79,7 +79,7 @@ public class SetUpGame extends HttpServlet {
 
 			ServletContext ctx = getServletContext();
 
-			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/NewGame.jsp");
+			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/firstRound.jsp");
 			dispatcher.forward(request, response);
 
 			// response.sendRedirect("NewGame.jsp");

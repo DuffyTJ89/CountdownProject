@@ -18,14 +18,14 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class MainGame
  */
-@WebServlet("/MainGame")
-public class MainGame extends HttpServlet {
+@WebServlet("/FirstRunGame")
+public class FirstRunGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public MainGame() {
+	public FirstRunGame() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -94,7 +94,9 @@ public class MainGame extends HttpServlet {
 
 				System.out.println("Round refore : " + roundNum);
 				// RoundLimit.checkRoundNum();//move to the next round
-				roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
+				
+				//TODO add to continue instead
+				//roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
 
 				boolean ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
 
@@ -116,9 +118,9 @@ public class MainGame extends HttpServlet {
 
 					// HttpSession session = request.getSession();
 					
-					String userWrod = CompareWordToLetters.userWordFinal;
+					String uWord = CompareWordToLetters.userWordFinal;
 					
-					session.setAttribute("sUserWord", userWrod);
+					session.setAttribute("sUserWord", uWord);
 
 					request.setAttribute("sRoundNum", roundNum);
 					session.setAttribute("sRoundNum", roundNum);

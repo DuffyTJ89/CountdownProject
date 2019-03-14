@@ -21,7 +21,7 @@
 
 
 
-<form style="text-align:center;color:white;" action="MainGame" method="post">
+<form style="text-align:center;color:white;" action="FirstRunGame" method="post">
 Your word : <input type="text" name="userGuess" value="">
 <input type="submit" value="Submit">
 </form>
