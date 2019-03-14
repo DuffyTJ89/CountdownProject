@@ -103,7 +103,7 @@ public class FirstRunGame extends HttpServlet {
 				if (ChechkedRoundNum == true) {
 					// writer.println("<h3> Round : " + roundNum + "/5 </h3>");
 
-					List<String> randomLetters = GenerateRandomLetters.list();
+					//List<String> randomLetters = GenerateRandomLetters.list();
 
 					// writer.println("<h3> Here are your random letters : " + randomLetters +"
 					// </h3>");
@@ -124,8 +124,8 @@ public class FirstRunGame extends HttpServlet {
 
 					request.setAttribute("sRoundNum", roundNum);
 					session.setAttribute("sRoundNum", roundNum);
-					request.setAttribute("sRandomLetters", randomLetters);
-					session.setAttribute("sRandomLetters", randomLetters);
+					//request.setAttribute("sRandomLetters", randomLetters);
+					//session.setAttribute("sRandomLetters", randomLetters);
 					request.setAttribute("sName", yourName);
 					session.setAttribute("sName", yourName);
 					request.setAttribute("sGameScore", currentScore);

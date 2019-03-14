@@ -49,7 +49,7 @@ public class RoundsAndScoring {
 
 		roundNum++;
 
-		if (roundNum < 5) {
+		if (roundNum <= 6) {
 //			System.out.println("Game over");
 //			System.out.println("After " + (roundNum - 1) + " rounds. Total Game Score " + gameScore);
 //			

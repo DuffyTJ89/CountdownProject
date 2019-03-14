@@ -44,6 +44,8 @@ public class ContinueGame extends HttpServlet {
 		int gameScore = (int) session.getAttribute("sGameScore");
 		int roundNum = (int) session.getAttribute("sRoundNum");
 		String yourName = (String) session.getAttribute("sName");
+		
+		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
 
 		boolean ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
 
