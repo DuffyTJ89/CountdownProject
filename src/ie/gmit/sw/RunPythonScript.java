@@ -16,6 +16,7 @@ public class RunPythonScript {
 		try {
 
 			Runtime.getRuntime().exec("python " + command + pyName + ".py"); // command to run the script
+			System.out.println("Script Run");
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

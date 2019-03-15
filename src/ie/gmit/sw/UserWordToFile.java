@@ -20,7 +20,7 @@ public class UserWordToFile {
 		// look up the users word in the dictionary API
 		BufferedWriter writer = null;
 		try {
-			writer = new BufferedWriter(new FileWriter("C:\\Users\\Thomas\\Desktop\\NewCountdown\\ScrabbleProject\\src\\main\\java\\ie\\gmit\\sw\\Game\\output.txt"));
+			writer = new BufferedWriter(new FileWriter("C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\output.txt"));
 			writer.write(userWord);
 		} catch (IOException e) {
 			System.err.println(e);

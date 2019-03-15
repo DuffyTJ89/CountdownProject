@@ -67,13 +67,15 @@ public class FirstRunGame extends HttpServlet {
 			// writer.println("<h3 style=\"text-align:center;color:white;\">Waiting on
 			// Oxford Dictonary </h3>");
 			// TODO pass the current gamescore
+			
+			System.out.println("in true");
 
 			boolean wordIsValid = CheckValidWord.check();
 
 			if (wordIsValid = true) {
 				writer.println("<h3 style=\"text-align:center;color:white;\">Word is valid... </h3>");
 				Scanner sc = new Scanner(new File(
-						"C:\\Users\\Thomas\\Desktop\\NewCountdown\\ScrabbleProject\\src\\main\\java\\ie\\gmit\\sw\\Game\\output.txt"));
+						"C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\output.txt"));
 				String userWord = sc.nextLine();
 
 				int lettersUsed = CompareWordToLetters.compare(userWord, gameScore);

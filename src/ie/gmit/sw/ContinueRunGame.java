@@ -60,7 +60,7 @@ public class ContinueRunGame extends HttpServlet {
 			if (wordIsValid = true) {
 				
 				Scanner sc = new Scanner(new File(
-						"C:\\Users\\Thomas\\Desktop\\NewCountdown\\ScrabbleProject\\src\\main\\java\\ie\\gmit\\sw\\Game\\output.txt"));
+						"C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\output.txt"));
 				String userWord = sc.nextLine();
 
 				int lettersUsed = CompareWordToLetters.compare(userWord, gameScore);
@@ -81,6 +81,9 @@ public class ContinueRunGame extends HttpServlet {
 				session.setAttribute("sName", yourName);
 				request.setAttribute("sGameScore", currentScore);
 				session.setAttribute("sGameScore", currentScore);
+				
+				//TODO
+				//send to database here
 
 				ServletContext ctx = getServletContext();
 

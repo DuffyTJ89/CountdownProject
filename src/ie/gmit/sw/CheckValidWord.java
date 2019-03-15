@@ -10,7 +10,7 @@ public class CheckValidWord {
 
 		try {
 			Scanner s = new Scanner(new File(
-					"C:\\Users\\Thomas\\Desktop\\NewCountdown\\ScrabbleProject\\src\\main\\java\\ie\\gmit\\sw\\Game\\outputCode.txt"));
+					"C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\outputCode.txt"));
 			int statusCode = s.nextInt();
 			// s.close();
 
