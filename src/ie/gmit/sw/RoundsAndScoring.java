@@ -1,5 +1,9 @@
 package ie.gmit.sw;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class RoundsAndScoring {
 	
 	static int cScore;
@@ -21,7 +25,12 @@ public class RoundsAndScoring {
 	}
 	
 
-	
+	static void setupFile() throws IOException {
+		BufferedWriter writer = null;
+		writer = new BufferedWriter(new FileWriter("C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\outputCode.txt"));
+		writer.write("100");
+		writer.close();
+	}
 	
 	
 	static int updateUserRoundNum(int roundNum) {

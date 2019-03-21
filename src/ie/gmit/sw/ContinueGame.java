@@ -75,6 +75,9 @@ public class ContinueGame extends HttpServlet {
 			writer.println("Game over \n" + "After " + (roundNum - 1) + " rounds. Total Game Score " + gameScore);
 			
 			ServletContext ctx = getServletContext();
+			
+			//TODO
+			//send gameScore to db
 
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);

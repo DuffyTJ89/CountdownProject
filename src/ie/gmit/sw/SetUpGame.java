@@ -3,6 +3,8 @@
 
 package ie.gmit.sw;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -34,13 +36,16 @@ public class SetUpGame extends HttpServlet {
 		// HttpSession sessionRoundNum = request.getSession();
 		// HttpSession sessionRandletters = request.getSession();
 		// HttpSession session3 = request.getSession(false);
+		
+		RoundsAndScoring.setupFile();
+		System.out.println("fileSetUp");
 
 		String yourName = request.getParameter("userName");
-		PrintWriter writer = response.getWriter();
+		//PrintWriter writer = response.getWriter();
 
-		writer.println("<body style='background-color:#07205A;'>");
+		//writer.println("<body style='background-color:#07205A;'>");
 
-		writer.println("<h1>Hello " + yourName + "</h1>");
+		//writer.println("<h1>Hello " + yourName + "</h1>");
 
 		// Runner.main(null);
 
@@ -92,14 +97,15 @@ public class SetUpGame extends HttpServlet {
 			// CheckValidWord.check(gameScore);
 
 		} else {
-			writer.println("Game over \n" + "After " + (roundNum - 1) + " rounds. Total Game Score " + gameScore);
+			//writer.println("Game over \n" + "After " + (roundNum - 1) + " rounds. Total Game Score " + gameScore);
+			System.out.println("GameOver");
 		}
 
 		// String test = "testing";
 
 		// writer.println("<h2>Hello " + test + "</h2>");
 
-		writer.close();
+		//writer.close();
 	}// end doPost
 
 	/*
