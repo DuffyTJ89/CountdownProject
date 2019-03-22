@@ -11,7 +11,15 @@ public class RunPythonScript {
         boolean response = false;
 
 		//path: C:\Users\Thomas\Desktop\NewCountdown\ScrabbleProject\src\main\java\ie\gmit\sw\Game\DictionaryAPI.py
-		String command = "C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\";
+        
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        
+		//String command = "C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\";
+        
+        String command = "C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\";
+		
+		//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		
 		String pyName = "DictionaryAPI";
 		try {
 
