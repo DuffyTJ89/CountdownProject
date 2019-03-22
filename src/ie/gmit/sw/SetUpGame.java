@@ -36,9 +36,6 @@ public class SetUpGame extends HttpServlet {
 		// HttpSession sessionRoundNum = request.getSession();
 		// HttpSession sessionRandletters = request.getSession();
 		// HttpSession session3 = request.getSession(false);
-		
-		RoundsAndScoring.setupFile();
-		System.out.println("fileSetUp");
 
 		String yourName = request.getParameter("userName");
 		//PrintWriter writer = response.getWriter();
