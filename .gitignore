@@ -2,7 +2,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 
 node_modules
-
+bin
+ 
 ### STS ###
 .apt_generated
 .classpath
@@ -27,3 +28,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/bin/
