@@ -8,7 +8,7 @@
 </head>
 <body bgcolor="#07205A">
 <div style="text-align:center;">
-	<img src="C:\Users\Thomas\eclipse-workspace\JSPCountdown\Countdown\Img\CountDownLogo.png" alt="CountdownLogo">
+	<img src="${pageContext.request.contextPath}/images/CountDownLogo.png" alt="CountdownLogo" />
 </div>
 
 	<h5 style="text-align:center;color:white; "> 1) The player will have 5 rounds to score as many points as they can</h5>

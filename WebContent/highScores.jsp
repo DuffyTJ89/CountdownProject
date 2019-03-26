@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<body bgcolor="#07205A">
+<div style="text-align:center;">
+	<img src="${pageContext.request.contextPath}/images/CountDownLogo.png" alt="CountdownLogo" />
+</div>
+
 <h1>Database Highscores</h1>
 
 </body>

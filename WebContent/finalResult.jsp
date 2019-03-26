@@ -8,7 +8,7 @@
 </head>
 <body bgcolor="#07205A">
 <div style="text-align:center;">
-	<img src="C:\Users\Thomas\eclipse-workspace\JSPCountdown\Countdown\Img\CountDownLogo.png" alt="CountdownLogo">
+	<img src="${pageContext.request.contextPath}/images/CountDownLogo.png" alt="CountdownLogo" />
 </div>
 	<!-- 
 					request.setAttribute("sRoundNum", roundNum);
