@@ -14,8 +14,7 @@
 </head>
 <body bgcolor="#07205A">
 <div style="text-align:center;">
-<!-- C:\Users\Thomas\eclipse-workspace\JSPCountdown\Countdown\Img\CountDownLogo.png -->
-	<img src="${pageContext.request.contextPath}/img/CountDownLogo.png" alt="CountdownLogo"/>
+	<img src="${pageContext.request.contextPath}/images/CountDownLogo.png" alt="CountdownLogo" />
 </div>
 <h1 style="text-align:center;color:white;">Welcome to online Countdown</h1>
 

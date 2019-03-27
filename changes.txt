@@ -1,12 +1,15 @@
-CheckValidWord.java
+outputCode.txt: 
+CheckValidWord.java 
+
+output.txt:
 ContinueRunGame.java
 FirstRunGame.java
-RoundsAndScoring.java
-RunPythonScript.java
 UserWordToFile.java
+
 DictionaryAPI.py
 
-WebContent files
+RunPythonScript.java - output.txt, outputCode.txt
+
 
 pom.xml
 changed:
