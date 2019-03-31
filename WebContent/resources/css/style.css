@@ -3,7 +3,7 @@ body {
     background: navy !important;
 }
 .welcome {
-    color: red;
+    color: red !important;
 }
 .rounds-text {
     color: white !important;
@@ -14,10 +14,10 @@ body {
 .rules-text {
     color: white !important;
 }
-.lettersValue-text {
-    color: #ffcc66 !important;
-}
 .highscores-text {
+    color: red !important;
+}
+.lettersValueHeader-text {
     color: red !important;
 }
 

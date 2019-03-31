@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Rules</title>
+<title>CountdownApp</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuh4zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
@@ -23,7 +23,7 @@
 				alt="CountdownLogo" />
 		</div>
 
-		<div>&nbsp;</div>
+		<h1 class="welcome">Countdown Rules</h1>
 
 		<div class="row">
 			<div class="col-lg-2"></div>
@@ -43,25 +43,22 @@
 						English Dictionary and only words present in said dictionary will
 						be accepted</h4>
 
-					<div class="lettersValue-text">
-						<h4>Letter values are as follows:</h4>
-						<h4>1 point : E, A, I, O, N, R, T, L, S, U</h4>
-						<h4>2 points : D, G</h4>
-						<h4>3 points : B, C, M, P</h4>
-						<h4>4 points : F, H, V, W, Y</h4>
-						<h4>5 points : K</h4>
-						<h4>8 points : J, X</h4>
-						<h4>10 points : Q, Z</h4>
-					</div>
+					<h3 class="lettersValueHeader-text">Letter values are as
+						follows:</h3>
+					<h4>1 point : E, A, I, O, N, R, T, L, S, U</h4>
+					<h4>2 points : D, G</h4>
+					<h4>3 points : B, C, M, P</h4>
+					<h4>4 points : F, H, V, W, Y</h4>
+					<h4>5 points : K</h4>
+					<h4>8 points : J, X</h4>
+					<h4>10 points : Q, Z</h4>
 				</div>
-
-				<div>&nbsp;</div>
 
 			</div>
 			<div class="col-lg-2"></div>
 		</div>
 
-
 	</div>
+	<script src="resources/js/links.js"></script>
 </body>
 </html>
