@@ -3,5 +3,8 @@ body {
     background: navy !important;
 }
 .welcome {
-color: red;
+    color: red;
+}
+.rounds-text {
+    color: white !important;
 }

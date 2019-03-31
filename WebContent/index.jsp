@@ -24,7 +24,7 @@
 		</div>
 
 		<h1 class="welcome">Welcome to online Countdown</h1>
-		
+
 		<div>&nbsp;</div>
 
 		<div class="row">
@@ -33,47 +33,48 @@
 
 				<div id="User_form">
 
-					<form method="post" action="newGame">
+					<form action="newGame" method="post">
 						<!----- USER FORM ------>
-						<div class="input-group">
+						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i
 								class="glyphicon glyphicon-user"></i>
 							</span> <input type="text" name="userName" class="form-control"
-								placeholder="Enter your name ..." maxlength="20">
+								placeholder="Enter Your Name ..." maxlength="20">
 						</div>
 
 						<div>&nbsp;</div>
 
 						<!----- SUBMIT BUTTON ------>
 						<button id="submit_btn" type="submit"
-							class="btn btn-primary btn-lg">New Game</button>
+							class="btn btn-primary btn-lg btn-block">New Game</button>
 
 					</form>
-
 				</div>
+
+				<div>&nbsp;</div>
+
+				<div>
+					<button class="btn btn-warning btn-lg btn-block" onclick="rules()">Rules</button>
+
+					<div>&nbsp;</div>
+
+					<button class="btn btn-success btn-lg btn-block"
+						onclick="hScores()">HighScores</button>
+
+
+					<script>
+							function rules() {
+								window.open("rules.jsp");
+							}
+
+							function hScores() {
+								window.open("highScores.jsp");
+							}
+					</script>
+				</div>
+
 				<div class="col-lg-4"></div>
 			</div>
-		</div>
-
-		<div>&nbsp;</div>
-
-		<div class="span">
-			<button class="btn btn-primary btn-lg" onclick="rules()">Rules</button>
-
-			<div>&nbsp;</div>
-
-			<button class="btn btn-success btn-lg" onclick="hScores()">HighScores</button>
-
-
-			<script>
-				function rules() {
-					window.open("rules.jsp");
-				}
-
-				function hScores() {
-					window.open("highScores.jsp");
-				}
-			</script>
 		</div>
 
 	</div>

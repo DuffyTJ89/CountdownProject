@@ -23,6 +23,8 @@
 				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
+		
+		<div>&nbsp;</div>
 
 		<h1>Database Highscores</h1>
 	</div>

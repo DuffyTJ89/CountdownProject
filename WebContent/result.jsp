@@ -22,6 +22,8 @@
 				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
+		
+		<div>&nbsp;</div>
 		<!-- 
 					request.setAttribute("sRoundNum", roundNum);
 					session.setAttribute("sRoundNum", roundNum);

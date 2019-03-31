@@ -22,6 +22,8 @@
 				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
+		
+		<div>&nbsp;</div>
 
 		<h5 style="text-align: center; color: white;">1) The player will
 			have 5 rounds to score as many points as they can</h5>

@@ -16,34 +16,51 @@
 
 <body class="text-center">
 	<div class="container">
-	
-		<div style="text-align: center;">
+
+		<div>
 			<img
 				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
 
-		<!-- sRoundNum sName -->
-		<h5 style="text-align: center; color: white;">Welcome ${sName}</h5>
+		<div>&nbsp;</div>
 
-		<h3 style="text-align: center; color: white;">Round
-			${sRoundNum}/5</h3>
-		<h3 style="text-align: center; color: white;">GameScore :
-			${sGameScore}</h3>
+		<div class="row">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
 
-		<h3 style="text-align: center; color: white;">Your Letters are</h3>
-		<br>
-		<p style="text-align: center; color: white;">${sRandomLetters}</p>
-		<br>
+				<div class="rounds-text">
+					<!-- sRoundNum sName -->
+					<h3>Welcome ${sName}</h3>
+					<h3>Round: ${sRoundNum}/5</h3>
+					<h3>GameScore: ${sGameScore}</h3>
+					<h3>Your Letters are:</h3>
+					<h3>${sRandomLetters}</h3>
+				</div>
 
+				<div>&nbsp;</div>
 
+				<div id="Word_form">
+					<form action="ContinueRunGame" method="post">
 
-		<form style="text-align: center; color: white;"
-			action="ContinueRunGame" method="post">
-			Your word : <input type="text" name="userGuess" value=""> <input
-				type="submit" value="Submit">
-		</form>
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon"> <i
+								class="glyphicon glyphicon-pencil"></i>
+							</span> <input type="text" name="userGuess" value=""
+								class="form-control" placeholder="Enter Your Word ..."
+								maxlength="10">
+						</div>
 
+						<div>&nbsp;</div>
+
+						<button id="submit_btn" type="submit"
+							class="btn btn-success btn-lg btn-block">Submit Word</button>
+					</form>
+				</div>
+
+				<div class="col-lg-4"></div>
+			</div>
+		</div>
 
 	</div>
 </body>
