@@ -11,7 +11,7 @@
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
 <!-- CSS file -->
-<link href="resources/style.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="text-center">
@@ -31,13 +31,21 @@
 
 				<div class="finalRound-text">
 					<h1>GAME OVER</h1>
-					<h2>${sName},your final score: ${sGameScore}</h2>
+					<h2>${sName}, your final score: ${sGameScore}</h2>
 				</div>
 
-				<div class="col-lg-4"></div>
+				<div>&nbsp;</div>
+
+				<div>
+					<button class="btn btn-success btn-lg btn-block"
+						onclick="hScores()">HighScores</button>
+				</div>
+
 			</div>
+			<div class="col-lg-4"></div>
 		</div>
 
 	</div>
+	<script src="resources/js/links.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
 <!-- CSS file -->
-<link href="resources/style.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="text-center">
@@ -31,10 +31,10 @@
 
 				<div class="rounds-text">
 					<!-- sRoundNum sName -->
-					<h3>Welcome ${sName}</h3>
+					<h3 class="welcome">Welcome ${sName}</h3>
 					<h3>Round: ${sRoundNum}/5</h3>
 					<h3>GameScore: ${sGameScore}</h3>
-					<h3>Your Letters are:</h3>
+					<h3 class="welcome">Your Letters are:</h3>
 					<h3>${sRandomLetters}</h3>
 				</div>
 
@@ -54,14 +54,26 @@
 						<div>&nbsp;</div>
 
 						<button id="submit_btn" type="submit"
-							class="btn btn-success btn-lg btn-block">Submit Word</button>
+							class="btn btn-primary btn-lg btn-block">Submit Word</button>
 					</form>
 				</div>
 
-				<div class="col-lg-4"></div>
+				<div>&nbsp;</div>
+
+				<div>
+					<button class="btn btn-warning btn-lg btn-block" onclick="rules()">Rules</button>
+
+					<div>&nbsp;</div>
+
+					<button class="btn btn-success btn-lg btn-block"
+						onclick="hScores()">HighScores</button>
+				</div>
+
 			</div>
+			<div class="col-lg-4"></div>
 		</div>
 
 	</div>
+	<script src="resources/js/links.js"></script>
 </body>
 </html>

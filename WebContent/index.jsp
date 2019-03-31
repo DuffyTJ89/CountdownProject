@@ -11,7 +11,7 @@
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
 <!-- CSS file -->
-<link href="resources/style.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="text-center">
@@ -60,23 +60,13 @@
 
 					<button class="btn btn-success btn-lg btn-block"
 						onclick="hScores()">HighScores</button>
-
-
-					<script>
-							function rules() {
-								window.open("rules.jsp");
-							}
-
-							function hScores() {
-								window.open("highScores.jsp");
-							}
-					</script>
 				</div>
 
-				<div class="col-lg-4"></div>
 			</div>
+			<div class="col-lg-4"></div>
 		</div>
 
 	</div>
+	<script src="resources/js/links.js"></script>
 </body>
 </html>

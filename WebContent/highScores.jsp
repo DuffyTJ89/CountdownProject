@@ -11,22 +11,31 @@
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
 <!-- CSS file -->
-<link href="resources/style.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
 <body class="text-center">
 	<div class="container">
-	
-		<div style="text-align: center;">
+
+		<div>
 			<img
 				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
-		
+
 		<div>&nbsp;</div>
 
-		<h1>Database Highscores</h1>
+		<div class="row">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
+
+				<h1 class="highscores-text">Database Highscores</h1>
+
+
+			</div>
+			<div class="col-lg-4"></div>
+		</div>
+
 	</div>
 </body>
 </html>

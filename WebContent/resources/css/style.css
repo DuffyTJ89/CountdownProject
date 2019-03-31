@@ -11,3 +11,13 @@ body {
 .finalRound-text {
     color: red !important;
 }
+.rules-text {
+    color: white !important;
+}
+.lettersValue-text {
+    color: #ffcc66 !important;
+}
+.highscores-text {
+    color: red !important;
+}
+
