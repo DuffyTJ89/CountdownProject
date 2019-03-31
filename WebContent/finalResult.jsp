@@ -12,6 +12,10 @@
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
+<!-- jQuery File -->
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="resource/js/form_login.js"></script>
 </head>
 
 <body class="text-center">

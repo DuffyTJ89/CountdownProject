@@ -43,11 +43,11 @@ public class FirstRunGame extends HttpServlet {
 
 //		request.setAttribute("sRoundNum", roundNum);
 //		request.setAttribute("sRandomLetters", randomLetters);
-//		request.setAttribute("sName", yourName);
+//		request.setAttribute("sName", userName);
 //		request.setAttribute("sGameScore", gameScore);
 		int gameScore = (int) session.getAttribute("sGameScore");
 		int roundNum = (int) session.getAttribute("sRoundNum");
-		String yourName = (String) session.getAttribute("sName");
+		String userName = (String) session.getAttribute("sName");
 
 		String uGuess = request.getParameter("userGuess");
 
@@ -139,8 +139,8 @@ public class FirstRunGame extends HttpServlet {
 					session.setAttribute("sRoundNum", roundNum);
 					//request.setAttribute("sRandomLetters", randomLetters);
 					//session.setAttribute("sRandomLetters", randomLetters);
-					request.setAttribute("sName", yourName);
-					session.setAttribute("sName", yourName);
+					request.setAttribute("sName", userName);
+					session.setAttribute("sName", userName);
 					request.setAttribute("sGameScore", currentScore);
 					session.setAttribute("sGameScore", currentScore);
 
@@ -181,8 +181,8 @@ public class FirstRunGame extends HttpServlet {
 //				session.setAttribute("sRoundNum",roundNum );
 //				request.setAttribute("sRandomLetters", randomLetters);
 //				session.setAttribute("sRandomLetters",randomLetters );
-//				request.setAttribute("sName", yourName);
-//				session.setAttribute("sName",yourName );
+//				request.setAttribute("sName", userName);
+//				session.setAttribute("sName",userName );
 //				request.setAttribute("sGameScore", gameScore);
 //				session.setAttribute("sGameScore",gameScore );
 

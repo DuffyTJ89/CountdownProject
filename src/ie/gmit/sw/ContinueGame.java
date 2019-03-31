@@ -43,7 +43,7 @@ public class ContinueGame extends HttpServlet {
 
 		int gameScore = (int) session.getAttribute("sGameScore");
 		int roundNum = (int) session.getAttribute("sRoundNum");
-		String yourName = (String) session.getAttribute("sName");
+		String userName = (String) session.getAttribute("sName");
 		
 		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
 
@@ -51,7 +51,7 @@ public class ContinueGame extends HttpServlet {
 		
 		session.setAttribute("sRoundNum", roundNum);
 		
-		session.setAttribute("sName", yourName);
+		session.setAttribute("sName", userName);
 		session.setAttribute("sGameScore", gameScore);
 
 		if (ChechkedRoundNum == true) {
@@ -63,7 +63,7 @@ public class ContinueGame extends HttpServlet {
 			
 //			session.setAttribute("sRoundNum", roundNum);
 //			session.setAttribute("sRandomLetters", randomLetters);
-//			session.setAttribute("sName", yourName);
+//			session.setAttribute("sName", userName);
 //			session.setAttribute("sGameScore", gameScore);
 			
 			ServletContext ctx = getServletContext();

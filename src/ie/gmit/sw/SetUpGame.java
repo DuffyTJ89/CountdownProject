@@ -33,7 +33,7 @@ public class SetUpGame extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String yourName = request.getParameter("userName");
+		String userName = request.getParameter("userName");
 	
 		int roundNum = RoundsAndScoring.setUserRoundNum();// Initialize the user's round number to zero
 		int gameScore = RoundsAndScoring.setUserGameScore();
@@ -52,8 +52,8 @@ public class SetUpGame extends HttpServlet {
 			session.setAttribute("sRoundNum", roundNum);
 			request.setAttribute("sRandomLetters", randomLetters);
 			session.setAttribute("sRandomLetters", randomLetters);
-			request.setAttribute("sName", yourName);
-			session.setAttribute("sName", yourName);
+			request.setAttribute("sName", userName);
+			session.setAttribute("sName", userName);
 			request.setAttribute("sGameScore", gameScore);
 			session.setAttribute("sGameScore", gameScore);
 
