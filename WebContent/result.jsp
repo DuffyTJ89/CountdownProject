@@ -17,46 +17,35 @@
 <body class="text-center">
 	<div class="container">
 
-		<div style="text-align: center;">
+		<div>
 			<img
 				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
-		
+
 		<div>&nbsp;</div>
-		<!-- 
-					request.setAttribute("sRoundNum", roundNum);
-					session.setAttribute("sRoundNum", roundNum);
-					request.setAttribute("sRandomLetters", randomLetters);
-					session.setAttribute("sRandomLetters", randomLetters);
-					request.setAttribute("sName", yourName);
-					session.setAttribute("sName", yourName);
-					request.setAttribute("sGameScore", gameScore);
-					session.setAttribute("sGameScore", gameScore);
-					sUserWord
-					
-					<form style="text-align:center;color:white;" action="FirstRunGame" method="post">
-						Your word : <input type="text" name="userGuess" value="">
-					<input type="submit" value="Submit">
-</form>
-	 -->
 
-		<h5 style="text-align: center; color: white;">${sName},your
-			results :</h5>
+		<div class="row">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
 
-		<h3 style="text-align: center; color: white;">Round :
-			${sRoundNum}/5</h3>
-		<h3 style="text-align: center; color: white;">Your word :
-			${sUserWord}</h3>
-		<h3 style="text-align: center; color: white;">GameScore :
-			${sGameScore}</h3>
+				<div class="rounds-text">
+					<h3>${sName}, your results:</h3>
+					<h3>Round: ${sRoundNum}/5</h3>
+					<h3>Your word: ${sUserWord}</h3>
+					<h3>GameScore: ${sGameScore}</h3>
+				</div>
 
-		<!-- <button style="text-align:center;color:red;" type="button" action="FirstRunGame" method="post">Move to next round</button> -->
+				<div id="NextRound_form">
+					<form action="ContinueGame" method="post">
+						<button id="submit_btn" type="submit"
+							class="btn btn-success btn-lg btn-block">Next Round</button>
+					</form>
+				</div>
 
-		<form style="text-align: center;" action="ContinueGame" method="post">
-			<input type="submit" name="button1" value="Move to next round" />
-		</form>
-
+				<div class="col-lg-4"></div>
+			</div>
+		</div>
 
 	</div>
 </body>

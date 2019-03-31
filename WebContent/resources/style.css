@@ -8,3 +8,6 @@ body {
 .rounds-text {
     color: white !important;
 }
+.finalRound-text {
+    color: red !important;
+}

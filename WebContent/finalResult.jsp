@@ -17,37 +17,26 @@
 <body class="text-center">
 	<div class="container">
 
-		<div style="text-align: center;">
+		<div>
 			<img
 				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
-		
+
 		<div>&nbsp;</div>
-		<!-- 
-					request.setAttribute("sRoundNum", roundNum);
-					session.setAttribute("sRoundNum", roundNum);
-					request.setAttribute("sRandomLetters", randomLetters);
-					session.setAttribute("sRandomLetters", randomLetters);
-					request.setAttribute("sName", yourName);
-					session.setAttribute("sName", yourName);
-					request.setAttribute("sGameScore", gameScore);
-					session.setAttribute("sGameScore", gameScore);
-					sUserWord
-					
-					<form style="text-align:center;color:white;" action="FirstRunGame" method="post">
-						Your word : <input type="text" name="userGuess" value="">
-					<input type="submit" value="Submit">
-</form>
-	 -->
-		<h5 style="text-align: center; color: white;">GAME OVER :</h5>
-		<h2 style="text-align: center; color: white;">${sName},your
-			results :</h2>
 
-		<h3 style="text-align: center; color: white;">Final GameScore :
-			${sGameScore}</h3>
+		<div class="row">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
 
+				<div class="finalRound-text">
+					<h1>GAME OVER</h1>
+					<h2>${sName},your final score: ${sGameScore}</h2>
+				</div>
 
+				<div class="col-lg-4"></div>
+			</div>
+		</div>
 
 	</div>
 </body>
