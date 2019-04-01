@@ -65,6 +65,7 @@
 				
 				<div align="center">
 					<h3 id="errMsg" class="p-3 mb-2 text-danger">${error_message}</h3>
+					<h3 id="conError" class="p-3 mb-2 text-danger">${connection_error}</h3>
 				</div>
 
 			</div>

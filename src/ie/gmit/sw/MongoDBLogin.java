@@ -30,7 +30,15 @@ public class MongoDBLogin extends HttpServlet {
 			req.getRequestDispatcher("/index.jsp").forward(req, resp);
 		} else {
 
-			boolean isUserFound = MongoDBUtil.searchUserInDb(login, pwd);
+			boolean isUserFound = false;
+			try {
+				isUserFound = MongoDBUtil.searchUserInDb(login, pwd);
+			} catch (Throwable e) {
+				System.out.println("Connection to database lost");
+				req.setAttribute("connection_error", "Connection to database lost.");
+				req.getRequestDispatcher("/index.jsp").forward(req, resp);
+				e.printStackTrace();
+			}
 			if (isUserFound) {
 				req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
 			} else {

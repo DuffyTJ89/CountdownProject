@@ -1,5 +1,6 @@
 package ie.gmit.sw;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,26 +13,38 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 public class MongoDBUtil {
+	
+    private static final int PORT_NO = 27010;
+    private static final String URL = "localhost";
+    private static final String DB_NAME = "user_records";
+    
 
+	private static MongoClient mongoClntObj;
+	private static MongoDatabase db;
+	
+//TODO Check unhappy path
+	
 	// Method to make a connection to the mongodb server listening on a default port
-	private static MongoClient getConnection() {
-		int port_no = 27017;
-		String url = "localhost";
-
-		MongoClient mongoClntObj = new MongoClient(url, port_no);
+	private static MongoClient getConnection() throws Throwable {
+		if (mongoClntObj == null) {
+			mongoClntObj = new MongoClient(URL, PORT_NO);
+		}
 		return mongoClntObj;
+	}
+	
+	private static MongoDatabase getDB() throws Throwable {
+		if (db == null) {
+			db = getConnection().getDatabase(DB_NAME);
+		}
+		return db;
 	}
 
 	// Method to search a user in the mongodb
-	public static boolean searchUserInDb(String loginId, String loginPwd) {
+	public static boolean searchUserInDb(String loginId, String loginPwd) throws Throwable {
 		boolean user_found = false;
-		String db_name = "user_records", db_collection_name = "admin";
-
-		// Get the mongodb connection
-		MongoDatabase db = getConnection().getDatabase(db_name);
 
 		// Get the mongodb collection.
-		MongoCollection<Document> col = db.getCollection(db_collection_name);
+		MongoCollection<Document> col = getDB().getCollection("admin");
 
 		// Get the particular record from the mongodb collection
 		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
@@ -49,6 +62,6 @@ public class MongoDBUtil {
 			user_found = true;
 		}
 		return user_found;
-	}//searchUserInDb
+	}// searchUserInDb
 
-}//MongoDBUtil
+}// MongoDBUtil
