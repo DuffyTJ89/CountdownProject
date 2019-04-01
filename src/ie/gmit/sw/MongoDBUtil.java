@@ -14,7 +14,7 @@ import com.mongodb.client.MongoDatabase;
 
 public class MongoDBUtil {
 	
-    private static final int PORT_NO = 27010;
+    private static final int PORT_NO = 27017;
     private static final String URL = "localhost";
     private static final String DB_NAME = "user_records";
     

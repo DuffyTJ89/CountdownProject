@@ -21,7 +21,7 @@ public class MongoDBLogin extends HttpServlet {
 	private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
 		// Reading post parameters from the request
-		String login = req.getParameter("login_id"); 
+		String login = req.getParameter("login_id");
 		String pwd = req.getParameter("login_pwd");
 
 		// Checking for null and empty values
@@ -30,21 +30,22 @@ public class MongoDBLogin extends HttpServlet {
 			req.getRequestDispatcher("/index.jsp").forward(req, resp);
 		} else {
 
-			boolean isUserFound = false;
 			try {
-				isUserFound = MongoDBUtil.searchUserInDb(login, pwd);
+				boolean isUserFound = MongoDBUtil.searchUserInDb(login, pwd);
+				if (isUserFound) {
+					req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
+				} else {
+					req.setAttribute("error_message",
+							"You are not an authorised user. Please check with administrator.");
+					req.getRequestDispatcher("/index.jsp").forward(req, resp);
+				}
 			} catch (Throwable e) {
-				System.out.println("Connection to database lost");
+				System.out.println("Connection to database ");
 				req.setAttribute("connection_error", "Connection to database lost.");
 				req.getRequestDispatcher("/index.jsp").forward(req, resp);
 				e.printStackTrace();
 			}
-			if (isUserFound) {
-				req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
-			} else {
-				req.setAttribute("error_message", "You are not an authorised user. Please check with administrator.");
-				req.getRequestDispatcher("/index.jsp").forward(req, resp);
-			}
+
 		}
 	}// handleRequest
 

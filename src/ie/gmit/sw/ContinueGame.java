@@ -53,6 +53,8 @@ public class ContinueGame extends HttpServlet {
 		
 		session.setAttribute("sName", userName);
 		session.setAttribute("sGameScore", gameScore);
+		
+		
 
 		if (ChechkedRoundNum == true) {
 
@@ -76,8 +78,7 @@ public class ContinueGame extends HttpServlet {
 			
 			ServletContext ctx = getServletContext();
 			
-			//TODO
-			//send gameScore to db
+			//todo create a method where the score data is saved into DB
 
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);
