@@ -36,7 +36,7 @@
 				<!------ MONGODB JSP & SERVLET ------>
 				<div id="login_form">
 					<form id="user_login_form" name="loginForm" method="post"
-						action="loginServlet">
+						action="adminLogin">
 						<!----- LOGIN FORM ------>
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i
@@ -60,9 +60,11 @@
 							identity</button>
 					</form>
 				</div>
-
+				
+				<div>&nbsp;</div>
+				
 				<div align="center">
-					<h4 id="errMsg" class="p-3 mb-2 bg-info text-danger">${error_message}</h4>
+					<h3 id="errMsg" class="p-3 mb-2 text-danger">${error_message}</h3>
 				</div>
 
 			</div>
