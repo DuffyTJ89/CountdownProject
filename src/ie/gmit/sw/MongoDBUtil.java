@@ -1,7 +1,7 @@
 package ie.gmit.sw;
 
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.bson.Document;
@@ -63,5 +63,41 @@ public class MongoDBUtil {
 		}
 		return user_found;
 	}// searchUserInDb
+	
+	// Method to save user results to the database
+	public static void saveResult(String userName, int gameScore) throws Throwable {
+		MongoCollection<Document> col = getDB().getCollection("games");
+		FindIterable<Document> findDocs = col.find();
+        System.out.println("find all docs in this collection");
+
+        for (Document d : findDocs) {
+            System.out.println(d.toJson());
+        }//end for
+
+        System.out.println();
+        
+      //Add Document to Database/Collection
+        try {
+            Document myNewDoc = new Document();//Create a new Mongo Document
+
+            System.out.println("Add Documents to Database/Collection");
+            myNewDoc.append("name", userName).append("score", gameScore);
+
+
+            col.insertOne(myNewDoc);
+
+            for (Document d : findDocs) {//iterate over results of find()
+                System.out.println(d.toJson());
+            }
+
+        } catch (Exception e) {
+            System.out.println("User " + (col.countDocuments() - 1) + " already added");
+        }
+
+        System.out.println();
+
+        //mongoClntObj.close();
+	}//saveResult
+	
 
 }// MongoDBUtil

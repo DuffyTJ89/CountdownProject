@@ -2,6 +2,7 @@ package ie.gmit.sw;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ContinueGame")
 public class ContinueGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -79,6 +81,12 @@ public class ContinueGame extends HttpServlet {
 			ServletContext ctx = getServletContext();
 			
 			//todo create a method where the score data is saved into DB
+			try {
+				MongoDBUtil.saveResult(userName, gameScore);
+			} catch (Throwable e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);
