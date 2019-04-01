@@ -13,7 +13,7 @@
 <!-- jQuery File -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resource/js/form_login.js"></script>
+<script type="text/javascript" src="resources/js/links.js"></script>
 </head>
 
 <body class="text-center">
@@ -48,6 +48,5 @@
 		</div>
 
 	</div>
-	<script src="resources/js/links.js"></script>
 </body>
 </html>
