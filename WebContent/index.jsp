@@ -25,9 +25,7 @@
 				alt="CountdownLogo" />
 		</div>
 
-		<h1 align="center" class="text-primary">Countdown Secure
-			Connection</h1>
-		<hr />
+		<h1 class="welcome">Countdown Admin Login</h1>
 
 		<div>&nbsp;</div>
 
@@ -40,7 +38,7 @@
 					<form id="user_login_form" name="loginForm" method="post"
 						action="loginServlet">
 						<!----- LOGIN FORM ------>
-						<div class="input-group">
+						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input type="text"
 								class="form-control" id="login_id"
@@ -49,7 +47,7 @@
 
 						<div>&nbsp;</div>
 
-						<div class="input-group">
+						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-lock"></i></span> <input type="password"
 								class="form-control" id="login_pwd"
@@ -58,14 +56,13 @@
 
 						<!----- SUBMIT BUTTON ------>
 						<div>&nbsp;</div>
-						<button id="submit_btn" type="submit" class="btn btn-primary">Confirm
+						<button id="submit_btn" type="submit" class="btn btn-primary btn-lg btn-block">Confirm
 							identity</button>
 					</form>
 				</div>
 
 				<div align="center">
-					<h4 id="errMsg" class="p-3 mb-2 bg-info text-danger">Text
-						Error Message: ${error_message}</h4>
+					<h4 id="errMsg" class="p-3 mb-2 bg-info text-danger">${error_message}</h4>
 				</div>
 
 			</div>
