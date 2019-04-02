@@ -20,11 +20,13 @@ public class CheckValidWord {
 			
 			//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			
+			System.out.println("in check");
 			int statusCode = s.nextInt();
 			// s.close();
 
 			if (statusCode == 200) {
-				// System.out.println("Word is valid");
+			 System.out.println("Word is valid in check");
+				
 
 				return true;
 
