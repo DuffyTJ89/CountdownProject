@@ -20,22 +20,12 @@ import javax.servlet.http.HttpSession;
 public class ContinueRunGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public ContinueRunGame() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		HttpSession session = request.getSession();
 
@@ -49,66 +39,49 @@ public class ContinueRunGame extends HttpServlet {
 
 		boolean PyScriptResponse = RunPythonScript.run();// run the python script to check the user word against the
 															// dictionary API
-		
+
 		if (PyScriptResponse = true) {
-			// writer.println("<h3 style=\"text-align:center;color:white;\">Waiting on
-			// Oxford Dictonary </h3>");
-			// TODO pass the current gamescore
 
 			boolean wordIsValid = CheckValidWord.check();
-			
+
 			if (wordIsValid = true) {
-				
-				//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-				
+
+				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 //				Scanner sc = new Scanner(new File(
 //						"C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\output.txt"));
-				
+
 //				Scanner sc = new Scanner(new File(
 //						"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
-				
+
 				Scanner sc = new Scanner(new File("output.txt"));
-				
-				//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+				// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 				String userWord = sc.nextLine();
 
 				int lettersUsed = CompareWordToLetters.compare(userWord, gameScore);
-				
-				int currentScore = RoundsAndScoring.cScore;
-				
-				boolean ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
-				
-				String uWord = CompareWordToLetters.userWordFinal;
-				
-				session.setAttribute("sUserWord", uWord);
 
-				request.setAttribute("sRoundNum", roundNum);
+				int currentScore = RoundsAndScoring.cScore;
+
+				boolean ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
+
+				String uWord = CompareWordToLetters.userWordFinal;
+
+				session.setAttribute("sUserWord", uWord);
 				session.setAttribute("sRoundNum", roundNum);
-				//request.setAttribute("sRandomLetters", randomLetters);
-				//session.setAttribute("sRandomLetters", randomLetters);
-				request.setAttribute("sName", userName);
 				session.setAttribute("sName", userName);
-				request.setAttribute("sGameScore", currentScore);
 				session.setAttribute("sGameScore", currentScore);
-				
-				//TODO
-				//send to database here
 
 				ServletContext ctx = getServletContext();
 
 				RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
 				dispatcher.forward(request, response);
 
-				
-			}//end wordIsvalid
-			
-		}//end PyScriptResponse
+			} // end wordIsvalid
+
+		} // end PyScriptResponse
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

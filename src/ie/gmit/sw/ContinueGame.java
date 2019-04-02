@@ -21,71 +21,50 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ContinueGame")
 public class ContinueGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 	private String dateNow = dateFormat.format(new Date());
-	
-	
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public ContinueGame() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		PrintWriter writer = response.getWriter();
+
+		// PrintWriter writer = response.getWriter();
 
 		HttpSession session = request.getSession();
 
 		int gameScore = (int) session.getAttribute("sGameScore");
 		int roundNum = (int) session.getAttribute("sRoundNum");
 		String userName = (String) session.getAttribute("sName");
-		
+
 		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
 
 		boolean ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
-		
+
 		session.setAttribute("sRoundNum", roundNum);
-		
+
 		session.setAttribute("sName", userName);
 		session.setAttribute("sGameScore", gameScore);
-		
-		
 
 		if (ChechkedRoundNum == true) {
 
 			List<String> randomLetters = GenerateRandomLetters.list();
-			
+
 			session.setAttribute("sRandomLetters", randomLetters);
-			
-			
-//			session.setAttribute("sRoundNum", roundNum);
-//			session.setAttribute("sRandomLetters", randomLetters);
-//			session.setAttribute("sName", userName);
-//			session.setAttribute("sGameScore", gameScore);
-			
+
 			ServletContext ctx = getServletContext();
 
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/newRound.jsp");
 			dispatcher.forward(request, response);
 
 		} else {
-			writer.println("Game over \n" + "After " + (roundNum - 1) + " rounds. Total Game Score " + gameScore);
-			
+
 			ServletContext ctx = getServletContext();
-			
-			//Saving the score to database
+
+			// Saving the score to database
 			try {
 				MongoDBUtil.saveResult(userName, gameScore, dateNow);
 			} catch (Throwable e) {
@@ -99,10 +78,6 @@ public class ContinueGame extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
