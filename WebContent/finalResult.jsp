@@ -33,7 +33,7 @@
 
 				<div class="finalRound-text">
 					<h1>GAME OVER</h1>
-					<h2>${sName}, your final score: ${sGameScore}</h2>
+					<h2>${sName},your final score: ${sGameScore}</h2>
 				</div>
 
 				<div>&nbsp;</div>
@@ -41,6 +41,14 @@
 				<div>
 					<button class="btn btn-success btn-lg btn-block"
 						onclick="hScores()">HighScores</button>
+				</div>
+
+				<div>&nbsp;</div>
+
+				<div>
+					<button id="submit_btn" type="submit"
+						class="btn btn-primary btn-lg btn-block" onclick="newGame()">New
+						Game</button>
 				</div>
 
 			</div>
