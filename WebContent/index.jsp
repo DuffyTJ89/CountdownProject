@@ -17,7 +17,7 @@
 </head>
 
 <body class="text-center">
-	<div id="mongoDbServlet" class="container">
+	<div id="mongoDbServlet" class="container-fluid">
 
 		<div>
 			<img

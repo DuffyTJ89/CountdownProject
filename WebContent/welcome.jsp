@@ -17,7 +17,7 @@
 </head>
 
 <body class="text-center">
-	<div class="container">
+	<div class="container-fluid">
 
 		<div>
 			<img
