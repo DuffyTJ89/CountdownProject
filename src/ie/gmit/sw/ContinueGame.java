@@ -2,6 +2,7 @@ package ie.gmit.sw;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -20,6 +21,10 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ContinueGame")
 public class ContinueGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+	private String dateNow = dateFormat.format(new Date());
+	
 	
 
 	/**
@@ -80,9 +85,9 @@ public class ContinueGame extends HttpServlet {
 			
 			ServletContext ctx = getServletContext();
 			
-			//todo create a method where the score data is saved into DB
+			//Saving the score to database
 			try {
-				MongoDBUtil.saveResult(userName, gameScore);
+				MongoDBUtil.saveResult(userName, gameScore, dateNow);
 			} catch (Throwable e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

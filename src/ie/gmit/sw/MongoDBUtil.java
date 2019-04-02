@@ -1,7 +1,6 @@
 package ie.gmit.sw;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.bson.Document;
@@ -18,7 +17,6 @@ public class MongoDBUtil {
     private static final String URL = "localhost";
     private static final String DB_NAME = "user_records";
     
-
 	private static MongoClient mongoClntObj;
 	private static MongoDatabase db;
 	
@@ -65,7 +63,7 @@ public class MongoDBUtil {
 	}// searchUserInDb
 	
 	// Method to save user results to the database
-	public static void saveResult(String userName, int gameScore) throws Throwable {
+	public static void saveResult(String userName, int gameScore, String dateNow) throws Throwable {
 		MongoCollection<Document> col = getDB().getCollection("games");
 		FindIterable<Document> findDocs = col.find();
         System.out.println("find all docs in this collection");
@@ -81,7 +79,7 @@ public class MongoDBUtil {
             Document myNewDoc = new Document();//Create a new Mongo Document
 
             System.out.println("Add Documents to Database/Collection");
-            myNewDoc.append("name", userName).append("score", gameScore);
+            myNewDoc.append("name", userName).append("score", gameScore).append("date", dateNow);
 
 
             col.insertOne(myNewDoc);
