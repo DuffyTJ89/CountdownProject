@@ -10,7 +10,7 @@
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
-<!-- jQuery Files -->
+<!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>

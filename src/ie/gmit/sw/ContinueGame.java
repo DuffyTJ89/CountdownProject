@@ -28,11 +28,15 @@ public class ContinueGame extends HttpServlet {
 	public ContinueGame() {
 		super();
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		// PrintWriter writer = response.getWriter();
 
 		HttpSession session = request.getSession();
 
@@ -67,21 +71,23 @@ public class ContinueGame extends HttpServlet {
 			// Saving the score to database
 			try {
 				MongoDBUtil.saveResult(userName, gameScore, dateNow);
+				System.out.println("Data saved successfully");
+				session.setAttribute("db_save_success", "Data saved successfully");
+				
 			} catch (Throwable e) {
-				// TODO Auto-generated catch block
+				System.out.println("Database Save Error");
+				session.setAttribute("db_save_error", "Database Save Error");
+				RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
+				dispatcher.forward(request, response);
+				
 				e.printStackTrace();
 			}
 
+			
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);
 		}
 
-	}
+	}//doGet
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
-}
+}//ContinueGame

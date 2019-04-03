@@ -10,10 +10,10 @@
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
-<!-- jQuery Files -->
+<!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/links.js"></script>
+<script type="text/javascript" src="resources/js/button_links.js"></script>
 </head>
 
 <body class="text-center">
@@ -43,7 +43,8 @@
 				<div>&nbsp;</div>
 
 				<div id="Word_form">
-					<form action="ContinueRunGame" method="post">
+					<form action="ContinueRunGame" method="post"
+						onsubmit="document.getElementById('loading').style.display='block'">
 
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i
@@ -57,6 +58,8 @@
 
 						<button id="submit_btn" type="submit"
 							class="btn btn-primary btn-lg btn-block">Submit Word</button>
+
+						<img id="loading" src="resources/images/loading.gif" />
 					</form>
 				</div>
 

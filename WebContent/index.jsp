@@ -10,10 +10,10 @@
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
-<!-- jQuery Files -->
+<!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/form_login.js"></script>
+<script type="text/javascript" src="resources/js/messages.js"></script>
 </head>
 
 <body class="text-center">
@@ -36,7 +36,8 @@
 				<!------ MONGODB JSP & SERVLET ------>
 				<div id="login_form">
 					<form id="user_login_form" name="loginForm" method="post"
-						action="adminLogin">
+						action="adminLogin"
+						onsubmit="document.getElementById('loading').style.display='block'">
 						<!----- LOGIN FORM ------>
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i
@@ -56,16 +57,19 @@
 
 						<!----- SUBMIT BUTTON ------>
 						<div>&nbsp;</div>
-						<button id="submit_btn" type="submit" class="btn btn-primary btn-lg btn-block">Confirm
+						<button id="submit_btn" type="submit"
+							class="btn btn-primary btn-lg btn-block">Confirm
 							identity</button>
+
+						<img id="loading" src="resources/images/loading.gif" />
 					</form>
 				</div>
-				
+
 				<div>&nbsp;</div>
-				
+
 				<div align="center">
-					<h3 id="errMsg" class="p-3 mb-2 text-danger">${error_message}</h3>
-					<h3 id="conError" class="p-3 mb-2 text-danger">${connection_error}</h3>
+					<h3 id="logErr" class="p-3 mb-2 text-danger">${login_error}</h3>
+					<h3 id="conErr" class="p-3 mb-2 text-danger">${connection_error}</h3>
 				</div>
 
 			</div>

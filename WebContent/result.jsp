@@ -10,10 +10,10 @@
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
-<!-- jQuery Files -->
+<!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/links.js"></script>
+<script type="text/javascript" src="resources/js/button_links.js"></script>
 </head>
 
 <body class="text-center">
@@ -33,16 +33,19 @@
 
 				<div class="rounds-text">
 					<!-- sRoundNum sName -->
-					<h3 class="welcome">${sName}, your results:</h3>
+					<h3 class="welcome">${sName},your results:</h3>
 					<h3>Round: ${sRoundNum}/5</h3>
 					<h3>Your word: ${sUserWord}</h3>
 					<h3>GameScore: ${sGameScore}</h3>
 				</div>
 
 				<div id="NextRound_form">
-					<form action="ContinueGame" method="post">
+					<form action="ContinueGame" method="post"
+						onsubmit="document.getElementById('loading').style.display='block'">
 						<button id="submit_btn" type="submit"
 							class="btn btn-primary btn-lg btn-block">Next Round</button>
+
+						<img id="loading" src="resources/images/loading.gif" />
 					</form>
 				</div>
 
