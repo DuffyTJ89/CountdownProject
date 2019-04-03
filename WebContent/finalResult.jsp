@@ -55,8 +55,8 @@
 				<div>&nbsp;</div>
 
 				<div align="center">
-					<h3 id="dbSaveErr" class="p-3 mb-2 text-danger">${db_save_error}</h3>
-					<h3 id="dbSaveSuccess" class="p-3 mb-2 text-danger">${db_save_success}</h3>
+					<h3 class="p-3 mb-2 text-danger">${db_save_error}</h3>
+					<h3 class="p-3 mb-2 text-danger">${db_save_success}</h3>
 				</div>
 
 			</div>

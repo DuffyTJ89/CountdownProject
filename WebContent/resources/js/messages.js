@@ -11,6 +11,4 @@ $(document).ready(function() {
         $('#logErr').hide(); 
         $('#conErr').hide();
     });      
-    //$('#dbSaveSuccess').hide();
-    $('#dbSaveErr').hide();
 });
