@@ -37,7 +37,7 @@ public class ContinueGame extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		HttpSession session = request.getSession();
 
 		int gameScore = (int) session.getAttribute("sGameScore");
@@ -52,12 +52,16 @@ public class ContinueGame extends HttpServlet {
 
 		session.setAttribute("sName", userName);
 		session.setAttribute("sGameScore", gameScore);
+		
+		//initialize messages
+		session.setAttribute("db_save_success", "");
+		session.setAttribute("db_save_error", "");
 
 		if (ChechkedRoundNum == true) {
 
 			List<String> randomLetters = GenerateRandomLetters.list();
 
-			session.setAttribute("sRandomLetters", randomLetters);
+			request.setAttribute("sRandomLetters", randomLetters);
 
 			ServletContext ctx = getServletContext();
 
@@ -77,13 +81,10 @@ public class ContinueGame extends HttpServlet {
 			} catch (Throwable e) {
 				System.out.println("Database Save Error");
 				session.setAttribute("db_save_error", "Database Save Error");
-				RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
-				dispatcher.forward(request, response);
 				
 				e.printStackTrace();
 			}
 
-			
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);
 		}
