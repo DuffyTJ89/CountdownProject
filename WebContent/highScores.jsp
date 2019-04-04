@@ -13,10 +13,14 @@
 <!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
 <body class="text-center">
 	<div class="container-fluid">
+		<div id="loading-bg"></div>
+		<img id="loading-image" src="resources/images/loading.gif"
+			alt="loading" />
 
 		<div>
 			<img

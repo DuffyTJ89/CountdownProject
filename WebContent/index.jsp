@@ -14,10 +14,15 @@
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/messages.js"></script>
+<script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
 <body class="text-center">
-	<div id="mongoDbServlet" class="container-fluid">
+
+	<div class="container-fluid">
+		<div id="loading-bg"></div>
+		<img id="loading-image" src="resources/images/loading.gif"
+			alt="loading" />
 
 		<div>
 			<img
@@ -36,8 +41,7 @@
 				<!------ MONGODB JSP & SERVLET ------>
 				<div id="login_form">
 					<form id="user_login_form" name="loginForm" method="post"
-						action="adminLogin"
-						onsubmit="document.getElementById('loading').style.display='block'">
+						action="adminLogin">
 						<!----- LOGIN FORM ------>
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i
@@ -61,7 +65,7 @@
 							class="btn btn-primary btn-lg btn-block">Confirm
 							identity</button>
 
-						<img id="loading" src="resources/images/loading.gif" />
+						<div class="spinner"></div>
 					</form>
 				</div>
 
@@ -77,5 +81,4 @@
 		</div>
 
 	</div>
-</body>
 </html>

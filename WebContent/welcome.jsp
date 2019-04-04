@@ -14,10 +14,14 @@
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/button_links.js"></script>
+<script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
 <body class="text-center">
 	<div class="container-fluid">
+		<div id="loading-bg"></div>
+		<img id="loading-image" src="resources/images/loading.gif"
+			alt="loading" />
 
 		<div>
 			<img
@@ -35,8 +39,7 @@
 
 				<div id="User_form">
 
-					<form action="newGame" method="post"
-						onsubmit="document.getElementById('loading').style.display='block'">
+					<form action="newGame" method="post">
 						<!----- USER FORM ------>
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i
@@ -50,8 +53,6 @@
 						<!----- SUBMIT BUTTON ------>
 						<button id="submit_btn" type="submit"
 							class="btn btn-primary btn-lg btn-block">New Game</button>
-
-						<img id="loading" src="resources/images/loading.gif" />
 					</form>
 				</div>
 
