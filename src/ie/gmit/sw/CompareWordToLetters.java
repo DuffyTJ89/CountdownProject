@@ -4,37 +4,37 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CompareWordToLetters {
-	
-	static String wordString="";
-	static String userWordFinal="";
-	
+
+	static String wordString = "";
+	static String userWordFinal = "";
+
 	public static void listToString(String noListString) {
 		// TODO Auto-generated method stub
-		
-		wordString = noListString; 
-		
+
+		wordString = noListString;
+
 	}
-	
+
 	public static void userWord(String uWord) {
-		
+
 		userWordFinal = uWord;
-		
+
 	}
-	
-	static int compare(String userWord, int gameScore){
-		
+
+	static int compare(String userWord, int gameScore) {
+
 		userWord = userWord.toUpperCase();
-		
-		
-		//TODO print this line to the results page
+
+		// TODO print this line to the results page
 		System.out.println("Your answer of ' " + userWord + " ' uses  ");
-		
+
 		userWord(userWord);
 
 		// System.out.println("without list "+ noListString);
 
 		// **************************//
-		//source: https://stackoverflow.com/questions/30662384/accept-2-strings-and-display-common-chars-in-them
+		// source:
+		// https://stackoverflow.com/questions/30662384/accept-2-strings-and-display-common-chars-in-them
 		// check how many letter the user uses
 
 		Set<Character> set1 = new HashSet<Character>();
@@ -137,25 +137,16 @@ public class CompareWordToLetters {
 			}
 
 		}
-
-		//System.out.println("\nTotal number of used letters : " + set1.size());
 		int lettersUsed = set1.size();
 
 		// *************************//
 		// add the user score up
 		System.out.println("Total score for this round is : " + roundScore);
-		
-		//MainGame.gameScore += userScore; //update the overall game score with the round score
-		
+
 		RoundsAndScoring.updateUserGameScore(roundScore, gameScore);
-		
+
 		return lettersUsed;
-		//System.out.println("Overall game score : " + MainGame.gameScore);
 
-		//RoundLimit.checkRoundNum();//move to the next round
-		
 	}
-
-	
 
 }

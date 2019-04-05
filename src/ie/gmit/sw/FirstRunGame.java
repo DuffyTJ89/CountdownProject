@@ -49,11 +49,11 @@ public class FirstRunGame extends HttpServlet {
 			if (wordIsValid = true) {
 
 				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//				Scanner sc = new Scanner(new File(
-//						"C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\output.txt"));
-
 				Scanner sc = new Scanner(new File(
-						"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
+						"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
+
+//				Scanner sc = new Scanner(new File(
+//						"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
 
 				//Scanner sc = new Scanner(new File("output.txt"));
 
