@@ -26,7 +26,7 @@ public class MongoDBLogin extends HttpServlet {
 
 		// Checking for null and empty values
 		if (login == null || pwd == null || login.trim().length() == 0 || pwd.trim().length() == 0) {
-			req.setAttribute("error_message", "Please enter login id and password");
+			req.setAttribute("login_error", "Please enter login id and password");
 			req.getRequestDispatcher("/index.jsp").forward(req, resp);
 		} else {
 
@@ -35,13 +35,13 @@ public class MongoDBLogin extends HttpServlet {
 				if (isUserFound) {
 					req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
 				} else {
-					req.setAttribute("error_message",
+					req.setAttribute("login_error",
 							"You are not an authorised user. Please check with administrator.");
 					req.getRequestDispatcher("/index.jsp").forward(req, resp);
 				}
 			} catch (Throwable e) {
-				System.out.println("Connection to database ");
-				req.setAttribute("connection_error", "Connection to database lost.");
+				System.out.println("Database Connection Error");
+				req.setAttribute("connection_error", "Database Connection Error");
 				req.getRequestDispatcher("/index.jsp").forward(req, resp);
 				e.printStackTrace();
 			}

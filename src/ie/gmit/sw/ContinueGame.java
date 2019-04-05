@@ -28,12 +28,16 @@ public class ContinueGame extends HttpServlet {
 	public ContinueGame() {
 		super();
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		// PrintWriter writer = response.getWriter();
-
+		
 		HttpSession session = request.getSession();
 
 		int gameScore = (int) session.getAttribute("sGameScore");
@@ -48,12 +52,16 @@ public class ContinueGame extends HttpServlet {
 
 		session.setAttribute("sName", userName);
 		session.setAttribute("sGameScore", gameScore);
+		
+		//initialize messages
+		session.setAttribute("db_save_success", "");
+		session.setAttribute("db_save_error", "");
 
 		if (ChechkedRoundNum == true) {
 
 			List<String> randomLetters = GenerateRandomLetters.list();
 
-			session.setAttribute("sRandomLetters", randomLetters);
+			request.setAttribute("sRandomLetters", randomLetters);
 
 			ServletContext ctx = getServletContext();
 
@@ -67,8 +75,13 @@ public class ContinueGame extends HttpServlet {
 			// Saving the score to database
 			try {
 				MongoDBUtil.saveResult(userName, gameScore, dateNow);
+				System.out.println("Data saved successfully");
+				session.setAttribute("db_save_success", "Data saved successfully");
+				
 			} catch (Throwable e) {
-				// TODO Auto-generated catch block
+				System.out.println("Database Save Error");
+				session.setAttribute("db_save_error", "Database Save Error");
+				
 				e.printStackTrace();
 			}
 
@@ -76,12 +89,6 @@ public class ContinueGame extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 
-	}
+	}//doGet
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
-}
+}//ContinueGame

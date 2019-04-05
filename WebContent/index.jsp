@@ -10,14 +10,19 @@
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
-<!-- jQuery Files -->
+<!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/form_login.js"></script>
+<script type="text/javascript" src="resources/js/messages.js"></script>
+<script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
 <body class="text-center">
-	<div id="mongoDbServlet" class="container">
+
+	<div class="container-fluid">
+		<div id="loading-bg"></div>
+		<img id="loading-image" src="resources/images/loading.gif"
+			alt="loading" />
 
 		<div>
 			<img
@@ -56,16 +61,19 @@
 
 						<!----- SUBMIT BUTTON ------>
 						<div>&nbsp;</div>
-						<button id="submit_btn" type="submit" class="btn btn-primary btn-lg btn-block">Confirm
+						<button id="submit_btn" type="submit"
+							class="btn btn-primary btn-lg btn-block">Confirm
 							identity</button>
+
+						<div class="spinner"></div>
 					</form>
 				</div>
-				
+
 				<div>&nbsp;</div>
-				
+
 				<div align="center">
-					<h3 id="errMsg" class="p-3 mb-2 text-danger">${error_message}</h3>
-					<h3 id="conError" class="p-3 mb-2 text-danger">${connection_error}</h3>
+					<h3 id="logErr" class="p-3 mb-2 text-danger">${login_error}</h3>
+					<h3 id="conErr" class="p-3 mb-2 text-danger">${connection_error}</h3>
 				</div>
 
 			</div>
@@ -73,5 +81,4 @@
 		</div>
 
 	</div>
-</body>
 </html>

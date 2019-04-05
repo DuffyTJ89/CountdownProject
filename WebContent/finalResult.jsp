@@ -10,14 +10,19 @@
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
-<!-- jQuery File -->
+<!-- jQuery File, js scripts -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/links.js"></script>
+<script type="text/javascript" src="resources/js/button_links.js"></script>
+<script type="text/javascript" src="resources/js/messages.js"></script>
+<script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
 <body class="text-center">
-	<div class="container">
+	<div class="container-fluid">
+		<div id="loading-bg"></div>
+		<img id="loading-image" src="resources/images/loading.gif"
+			alt="loading" />
 
 		<div>
 			<img
@@ -33,7 +38,7 @@
 
 				<div class="finalRound-text">
 					<h1>GAME OVER</h1>
-					<h2>${sName}, your final score: ${sGameScore}</h2>
+					<h2>${sName},yourfinal score: ${sGameScore}</h2>
 				</div>
 
 				<div>&nbsp;</div>
@@ -41,6 +46,21 @@
 				<div>
 					<button class="btn btn-success btn-lg btn-block"
 						onclick="hScores()">HighScores</button>
+				</div>
+
+				<div>&nbsp;</div>
+
+				<div>
+					<button id="submit_btn" type="submit"
+						class="btn btn-primary btn-lg btn-block" onclick="newGame()">New
+						Game</button>
+				</div>
+
+				<div>&nbsp;</div>
+
+				<div align="center">
+					<h3 class="p-3 mb-2 text-danger">${db_save_error}</h3>
+					<h3 class="p-3 mb-2 text-danger">${db_save_success}</h3>
 				</div>
 
 			</div>
