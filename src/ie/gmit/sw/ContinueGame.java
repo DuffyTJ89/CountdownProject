@@ -22,9 +22,6 @@ import javax.servlet.http.HttpSession;
 public class ContinueGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-	private String dateNow = dateFormat.format(new Date());
-
 	public ContinueGame() {
 		super();
 	}
@@ -43,6 +40,7 @@ public class ContinueGame extends HttpServlet {
 		int gameScore = (int) session.getAttribute("sGameScore");
 		int roundNum = (int) session.getAttribute("sRoundNum");
 		String userName = (String) session.getAttribute("sName");
+		String date = (String) session.getAttribute("sDate");
 
 		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
 
@@ -52,8 +50,9 @@ public class ContinueGame extends HttpServlet {
 
 		session.setAttribute("sName", userName);
 		session.setAttribute("sGameScore", gameScore);
+		session.setAttribute("sDate", date);
 		
-		//initialize messages
+		//initialize database saving messages
 		session.setAttribute("db_save_success", "");
 		session.setAttribute("db_save_error", "");
 
@@ -74,7 +73,7 @@ public class ContinueGame extends HttpServlet {
 
 			// Saving the score to database
 			try {
-				MongoDBUtil.saveResult(userName, gameScore, dateNow);
+				MongoDBUtil.saveResult(userName, gameScore, date);
 				System.out.println("Data saved successfully");
 				session.setAttribute("db_save_success", "Data saved successfully");
 				
@@ -88,6 +87,13 @@ public class ContinueGame extends HttpServlet {
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);
 		}
+		
+			try {
+				MongoDBUtil.displayResults(userName, gameScore, date);
+			} catch (Throwable e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 	}//doGet
 
