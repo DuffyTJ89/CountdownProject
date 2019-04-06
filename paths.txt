@@ -1,13 +1,11 @@
-Majo-Paths for IntelliJ and Eclipse
+Majo-Paths
 
 outputCode.txt
 ---------------
 
 CheckValidWord.java 
 
-"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\outputCode.txt"
-
-"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\outputCode.txt"
+"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\outputCode.txt"
 
 ========================================================================================================
 
@@ -18,18 +16,14 @@ ContinueRunGame.java
 FirstRunGame.java
 UserWordToFile.java
 
-"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"
-
-"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"
+"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"
 
 ========================================================================================================
 
 RunPythonScript.java 
 ----------------------
 
-"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\"
-
-"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\"
+"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\"
 
 ========================================================================================================
 

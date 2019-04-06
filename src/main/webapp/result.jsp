@@ -9,23 +9,23 @@
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
 <!-- CSS file -->
-<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
+<link href="resource/css/style.css" rel="stylesheet" type="text/css" />
 <!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/button_links.js"></script>
-<script type="text/javascript" src="resources/js/loader.js"></script>
+<script type="text/javascript" src="resource/js/button_links.js"></script>
+<script type="text/javascript" src="resource/js/loader.js"></script>
 </head>
 
 <body class="text-center">
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
-		<img id="loading-image" src="resources/images/loading.gif"
+		<img id="loading-image" src="resource/images/loading.gif"
 			alt="loading" />
 
 		<div>
 			<img
-				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
+				src="${pageContext.request.contextPath}/resource/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
 

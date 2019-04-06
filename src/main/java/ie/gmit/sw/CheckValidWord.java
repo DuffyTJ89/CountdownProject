@@ -11,15 +11,14 @@ public class CheckValidWord {
 		try {
 			
 			//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-			
-			Scanner sc = new Scanner(new File(
-					"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\outputCode.txt"));
-			
 			
 //			Scanner sc = new Scanner(new File(
-//					"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\outputCode.txt"));
-//			
+//					"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\outputCode.txt"));
+			
+			
+			Scanner sc = new Scanner(new File(
+					"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\outputCode.txt"));
+			
 			//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			
 			System.out.println("in check");
