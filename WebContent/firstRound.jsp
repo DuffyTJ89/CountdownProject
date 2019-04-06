@@ -15,9 +15,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/button_links.js"></script>
 <script type="text/javascript" src="resources/js/loader.js"></script>
+
 </head>
 
-<body class="text-center">
+<body onload="setTimeout(function() { document.frm1.submit() }, 31000)" class="text-center">
 
 <audio autoplay>
   <source src="CountdownClock.mp3" type="audio/mpeg">
@@ -52,7 +53,7 @@
 				<div>&nbsp;</div>
 
 				<div id="Word_form">
-					<form action="FirstRunGame" method="post">
+					<form action="FirstRunGame" method="post" name="frm1">
 
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i

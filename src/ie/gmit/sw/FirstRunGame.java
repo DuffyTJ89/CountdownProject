@@ -27,6 +27,8 @@ public class FirstRunGame extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		String userWord="";
 
 		HttpSession session = request.getSession();
 
@@ -51,16 +53,21 @@ public class FirstRunGame extends HttpServlet {
 
 				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 				
-//				Scanner sc = new Scanner(new File(
-//						"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
-							
 				Scanner sc = new Scanner(new File(
-					"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
-				
+						"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
+							
+//				Scanner sc = new Scanner(new File(
+//					"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
+//				
 
 				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-				String userWord = sc.nextLine();
+				try{//if the file is empty set user word to empty string
+					userWord = sc.nextLine();
+				}catch(Exception e){
+					userWord = " ";
+				}
 
+				
 				int lettersUsed = CompareWordToLetters.compare(userWord, gameScore);
 
 				int currentScore = RoundsAndScoring.cScore;

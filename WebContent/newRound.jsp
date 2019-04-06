@@ -19,7 +19,7 @@
 
 
 
-<body class="text-center">
+<body onload="setTimeout(function() { document.frm1.submit() }, 31000)" class="text-center">
 
 <audio autoplay>
   <source src="CountdownClock.mp3" type="audio/mpeg">
@@ -54,7 +54,7 @@
 				<div>&nbsp;</div>
 
 				<div id="Word_form">
-					<form action="ContinueRunGame" method="post">
+					<form action="ContinueRunGame" method="post" name="frm1">
 
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i
