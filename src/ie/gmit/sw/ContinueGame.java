@@ -87,14 +87,7 @@ public class ContinueGame extends HttpServlet {
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-			try {
-				MongoDBUtil.displayResults(userName, gameScore, date);
-			} catch (Throwable e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+	
 	}//doGet
 
 }//ContinueGame

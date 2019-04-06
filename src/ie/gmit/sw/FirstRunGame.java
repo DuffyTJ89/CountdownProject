@@ -3,6 +3,7 @@ package ie.gmit.sw;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
@@ -49,13 +50,13 @@ public class FirstRunGame extends HttpServlet {
 			if (wordIsValid = true) {
 
 				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-				Scanner sc = new Scanner(new File(
-						"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
-
+				
 //				Scanner sc = new Scanner(new File(
-//						"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
-
-				//Scanner sc = new Scanner(new File("output.txt"));
+//						"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
+							
+				Scanner sc = new Scanner(new File(
+					"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
+				
 
 				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 				String userWord = sc.nextLine();

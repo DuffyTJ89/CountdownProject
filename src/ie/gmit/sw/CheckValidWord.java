@@ -9,31 +9,35 @@ public class CheckValidWord {
 	static boolean check() {
 
 		try {
+			
+			//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-			Scanner s = new Scanner(new File(
-					"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\outputCode.txt"));
-
-//			Scanner s = new Scanner(new File(
-//					"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\outputCode.txt"));
-
-			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+			
+//			Scanner sc = new Scanner(new File(
+//					"C:\\Users\\Thomas\\eclipse-workspace\\JSPCountdown\\Countdown\\src\\ie\\gmit\\sw\\outputCode.txt"));
+			
+			
+			Scanner sc = new Scanner(new File(
+					"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\ie\\gmit\\sw\\outputCode.txt"));
+			
+			//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			
 			System.out.println("in check");
-			int statusCode = s.nextInt();
+			int statusCode = sc.nextInt();
 			// s.close();
 
 			if (statusCode == 200) {
-				System.out.println("Word is valid in check");
+			 System.out.println("Word is valid in check");
+				
 
-				s.close();
 				return true;
+
+				
 
 			} else {
 				System.out.println("Invalid Word, you will be given a new set of letters now");
 				// TODO return user to enter word again
-				s.close();
+
 				return false;
 				// System.exit(0); //Don't let the user continue with an invalid word
 			}
