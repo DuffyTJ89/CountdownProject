@@ -37,7 +37,7 @@
 
 				<div class="rounds-text">
 					<!-- sRoundNum sName -->
-					<h3 class="welcome">${sName},yourresults:</h3>
+					<h3 class="welcome">${sName},your results :</h3>
 					<h3>Round: ${sRoundNum}/5</h3>
 					<h3>Your word: ${sUserWord}</h3>
 					<h3>GameScore: ${sGameScore}</h3>

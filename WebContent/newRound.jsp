@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Online Countdown</title>
+<title>Online Countdown Test</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -17,7 +17,14 @@
 <script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
+
+
 <body class="text-center">
+
+<audio autoplay>
+  <source src="CountdownClock.mp3" type="audio/mpeg">
+</audio>
+
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
 		<img id="loading-image" src="resources/images/loading.gif"

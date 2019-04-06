@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page import="ie.gmit.sw.RoundsAndScoring"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,6 +32,8 @@
 
 		<h1 class="welcome">Welcome to online Countdown</h1>
 
+		
+
 		<div>&nbsp;</div>
 
 		<div class="row">
@@ -46,6 +49,7 @@
 								class="glyphicon glyphicon-user"></i>
 							</span> <input type="text" name="userName" class="form-control"
 								placeholder="Enter Your Name ..." maxlength="20">
+								<input type="hidden" name="roundId" id="roundId" value="0"/>
 						</div>
 
 						<div>&nbsp;</div>

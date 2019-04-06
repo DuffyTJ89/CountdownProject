@@ -18,6 +18,11 @@
 </head>
 
 <body class="text-center">
+
+<audio autoplay>
+  <source src="CountdownClock.mp3" type="audio/mpeg">
+</audio>
+
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
 		<img id="loading-image" src="resources/images/loading.gif"

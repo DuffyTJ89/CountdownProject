@@ -32,6 +32,12 @@ public class SetUpGame extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		System.out.println("In setup testing round num");
+		
+		String roundID = request.getParameter("roundId");
+		
+		//System.out.println("Here it is : "+roundID);
 
 		String userName = request.getParameter("userName");
 	
