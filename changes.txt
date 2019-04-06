@@ -6,15 +6,19 @@ ContinueRunGame.java
 FirstRunGame.java
 UserWordToFile.java
 
-DictionaryAPI.py
+RunPythonScript.java 
 
-RunPythonScript.java - output.txt, outputCode.txt
+DictionaryAPI.py - output.txt, outputCode.txt
 
 ========================================================
 
 fix: 
 
 final round - new game
-display spinning wheel
+
+========================================================
+
+python - install pathlib
+
 
 
