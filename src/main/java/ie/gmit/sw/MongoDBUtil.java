@@ -99,7 +99,7 @@ public class MongoDBUtil {
 		
 		// Form a where query
 		BasicDBObject whereQuery = new BasicDBObject();
-		whereQuery.put("$and", obj);
+		whereQuery.put("$and", obj); //Mongo query requires a dollar character
 		System.out.println("Mongo query is?= " + whereQuery.toString());
 		
 		FindIterable<Document> cursor = col.find(whereQuery);

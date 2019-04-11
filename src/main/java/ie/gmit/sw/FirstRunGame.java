@@ -2,8 +2,6 @@ package ie.gmit.sw;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,7 +25,7 @@ public class FirstRunGame extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String userWord="";
 
 		HttpSession session = request.getSession();
@@ -41,8 +39,8 @@ public class FirstRunGame extends HttpServlet {
 		UserWordToFile.takeInput(uGuess);
 
 		int PyScriptResponse = RunPythonScript.run();// run the python script to check the user word against the
-															// dictionary API
-		
+		// dictionary API
+
 		System.out.println("PyScriptResponse " + PyScriptResponse);
 
 		if (PyScriptResponse == 1) {
@@ -52,13 +50,12 @@ public class FirstRunGame extends HttpServlet {
 			if (wordIsValid = true) {
 
 				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-				
+
 //				Scanner sc = new Scanner(new File(
 //						"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
-							
-				Scanner sc = new Scanner(new File(
-						"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"));
-				
+
+				Scanner sc = new Scanner(new File("C:\\Data\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"));
+
 				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 				try{//if the file is empty set user word to empty string
 					userWord = sc.nextLine();
@@ -66,7 +63,7 @@ public class FirstRunGame extends HttpServlet {
 					userWord = " ";
 				}
 
-				
+
 				int lettersUsed = CompareWordToLetters.compare(userWord, gameScore);
 
 				int currentScore = RoundsAndScoring.cScore;
@@ -104,12 +101,12 @@ public class FirstRunGame extends HttpServlet {
 		} else {
 			System.out.println("word is invalid");
 			GenerateRandomLetters.list();
-			
+
 			session.setAttribute("sRoundNum", roundNum);
 			session.setAttribute("sName", userName);
 			int currentScore = 0;
 			session.setAttribute("sGameScore", currentScore);
-			
+
 			ServletContext ctx = getServletContext();
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
 			dispatcher.forward(request, response);

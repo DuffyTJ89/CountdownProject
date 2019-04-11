@@ -4,6 +4,7 @@ target/
 node_modules
 bin
 target
+out
  
 ### STS ###
 .apt_generated

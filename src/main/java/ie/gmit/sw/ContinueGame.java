@@ -25,7 +25,7 @@ public class ContinueGame extends HttpServlet {
 	public ContinueGame() {
 		super();
 	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -34,7 +34,7 @@ public class ContinueGame extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		HttpSession session = request.getSession();
 
 		int gameScore = (int) session.getAttribute("sGameScore");
@@ -51,12 +51,12 @@ public class ContinueGame extends HttpServlet {
 		session.setAttribute("sName", userName);
 		session.setAttribute("sGameScore", gameScore);
 		session.setAttribute("sDate", date);
-		
+
 		//initialize database saving messages
 		session.setAttribute("db_save_success", "");
 		session.setAttribute("db_save_error", "");
 
-		if (ChechkedRoundNum == true) {
+		if (ChechkedRoundNum) {
 
 			List<String> randomLetters = GenerateRandomLetters.list();
 
@@ -76,18 +76,18 @@ public class ContinueGame extends HttpServlet {
 				MongoDBUtil.saveResult(userName, gameScore, date);
 				System.out.println("Data saved successfully");
 				session.setAttribute("db_save_success", "Data saved successfully");
-				
+
 			} catch (Throwable e) {
 				System.out.println("Database Save Error");
 				session.setAttribute("db_save_error", "Database Save Error");
-				
+
 				e.printStackTrace();
 			}
 
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);
 		}
-	
+
 	}//doGet
 
 }//ContinueGame
