@@ -2,36 +2,37 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Online Countdown</title>
+<title>Online Countdown Test</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
 <!-- CSS file -->
-<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
+<link href="resource/css/style.css" rel="stylesheet" type="text/css" />
 <!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/button_links.js"></script>
-<script type="text/javascript" src="resources/js/loader.js"></script>
-
+<script type="text/javascript" src="resource/js/button_links.js"></script>
+<script type="text/javascript" src="resource/js/loader.js"></script>
 </head>
+
+
 
 <body onload="setTimeout(function() { document.frm1.submit() }, 31000)" class="text-center">
 
 <audio autoplay>
-  <source src="CountdownClock.mp3" type="audio/mpeg">
+  <source src="resource/mp3/CountdownClock.mp3" type="audio/mpeg">
 </audio>
 
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
-		<img id="loading-image" src="resources/images/loading.gif"
+		<img id="loading-image" src="resource/images/loading.gif"
 			alt="loading" />
 
 		<div>
 			<img
-				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
+				src="${pageContext.request.contextPath}/resource/images/CountDownLogo.png"
 				alt="CountdownLogo" />
 		</div>
 
@@ -53,7 +54,7 @@
 				<div>&nbsp;</div>
 
 				<div id="Word_form">
-					<form action="FirstRunGame" method="post" name="frm1">
+					<form action="ContinueRunGame" method="post" name="frm1">
 
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i
@@ -67,8 +68,6 @@
 
 						<button id="submit_btn" type="submit"
 							class="btn btn-primary btn-lg btn-block">Submit Word</button>
-
-
 					</form>
 				</div>
 

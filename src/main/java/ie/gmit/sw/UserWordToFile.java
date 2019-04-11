@@ -3,6 +3,7 @@ package ie.gmit.sw;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class UserWordToFile {
 
@@ -17,7 +18,8 @@ public class UserWordToFile {
 //			writer = new BufferedWriter(new FileWriter(
 //					"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
 
-			writer = new BufferedWriter(new FileWriter("C:\\Data\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"));
+			writer = new BufferedWriter(new FileWriter(
+					"C:\\Data\\Skola\\GMIT\\Year 4\\Semester 1\\Applied Project and Minor Dissertation\\Project\\CountdownProject-Eclipse\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"));
 
 			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

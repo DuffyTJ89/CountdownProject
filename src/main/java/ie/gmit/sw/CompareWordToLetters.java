@@ -55,84 +55,84 @@ public class CompareWordToLetters {
 			System.out.println(" " + c);
 
 			switch (c) {
-				case 'A':
-					roundScore += 1;
-					break;
-				case 'B':
-					roundScore += 3;
-					break;
-				case 'C':
-					roundScore += 3;
-					break;
-				case 'D':
-					roundScore += 2;
-					break;
-				case 'E':
-					roundScore += 1;
-					break;
-				case 'F':
-					roundScore += 4;
-					break;
-				case 'G':
-					roundScore += 2;
-					break;
-				case 'H':
-					roundScore += 4;
-					break;
-				case 'I':
-					roundScore += 1;
-					break;
-				case 'J':
-					roundScore += 8;
-					break;
-				case 'K':
-					roundScore += 5;
-					break;
-				case 'L':
-					roundScore += 1;
-					break;
-				case 'M':
-					roundScore += 3;
-					break;
-				case 'N':
-					roundScore += 1;
-					break;
-				case 'O':
-					roundScore += 1;
-					break;
-				case 'P':
-					roundScore += 3;
-					break;
-				case 'Q':
-					roundScore += 10;
-					break;
-				case 'R':
-					roundScore += 1;
-					break;
-				case 'S':
-					roundScore += 1;
-					break;
-				case 'T':
-					roundScore += 1;
-					break;
-				case 'U':
-					roundScore += 1;
-					break;
-				case 'V':
-					roundScore += 4;
-					break;
-				case 'W':
-					roundScore += 4;
-					break;
-				case 'X':
-					roundScore += 8;
-					break;
-				case 'Y':
-					roundScore += 4;
-					break;
-				case 'Z':
-					roundScore += 10;
-					break;
+			case 'A':
+				roundScore += 1;
+				break;
+			case 'B':
+				roundScore += 3;
+				break;
+			case 'C':
+				roundScore += 3;
+				break;
+			case 'D':
+				roundScore += 2;
+				break;
+			case 'E':
+				roundScore += 1;
+				break;
+			case 'F':
+				roundScore += 4;
+				break;
+			case 'G':
+				roundScore += 2;
+				break;
+			case 'H':
+				roundScore += 4;
+				break;
+			case 'I':
+				roundScore += 1;
+				break;
+			case 'J':
+				roundScore += 8;
+				break;
+			case 'K':
+				roundScore += 5;
+				break;
+			case 'L':
+				roundScore += 1;
+				break;
+			case 'M':
+				roundScore += 3;
+				break;
+			case 'N':
+				roundScore += 1;
+				break;
+			case 'O':
+				roundScore += 1;
+				break;
+			case 'P':
+				roundScore += 3;
+				break;
+			case 'Q':
+				roundScore += 10;
+				break;
+			case 'R':
+				roundScore += 1;
+				break;
+			case 'S':
+				roundScore += 1;
+				break;
+			case 'T':
+				roundScore += 1;
+				break;
+			case 'U':
+				roundScore += 1;
+				break;
+			case 'V':
+				roundScore += 4;
+				break;
+			case 'W':
+				roundScore += 4;
+				break;
+			case 'X':
+				roundScore += 8;
+				break;
+			case 'Y':
+				roundScore += 4;
+				break;
+			case 'Z':
+				roundScore += 10;
+				break;
 
 			}
 
