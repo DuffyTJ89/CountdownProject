@@ -32,12 +32,6 @@ public class RoundsAndScoring {
 
 	static boolean checkRoundNumLess5(int roundNum) {
 
-		roundNum++;
-		if (roundNum <= 6) {
-			return true;
-		} // end if
-		else {
-			return false;
-		} // end else
+		return roundNum <= 5;
 	}
 }
