@@ -54,13 +54,13 @@ public class SetUpGame extends HttpServlet {
 
 			HttpSession session = request.getSession();
 
-			request.setAttribute("sRoundNum", roundNum);
+
 			session.setAttribute("sRoundNum", roundNum);
-			request.setAttribute("sRandomLetters", randomLetters);
+
 			session.setAttribute("sRandomLetters", randomLetters);
-			request.setAttribute("sName", userName);
+
 			session.setAttribute("sName", userName);
-			request.setAttribute("sGameScore", gameScore);
+
 			session.setAttribute("sGameScore", gameScore);
 
 			ServletContext ctx = getServletContext();

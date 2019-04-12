@@ -42,9 +42,13 @@ public class ContinueGame extends HttpServlet {
 		String userName = (String) session.getAttribute("sName");
 		String date = (String) session.getAttribute("sDate");
 
+		//sUserWord
+
 		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
 
-		boolean ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
+		boolean CheckedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
+		
+		//boolean CheckedUserWordWithDic = Dictionary.wordExists(userWord);
 
 		session.setAttribute("sRoundNum", roundNum);
 
@@ -56,7 +60,7 @@ public class ContinueGame extends HttpServlet {
 		session.setAttribute("db_save_success", "");
 		session.setAttribute("db_save_error", "");
 
-		if (ChechkedRoundNum) {
+		if (CheckedRoundNum == true) {
 
 			List<String> randomLetters = GenerateRandomLetters.list();
 

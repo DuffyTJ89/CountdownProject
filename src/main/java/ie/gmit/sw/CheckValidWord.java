@@ -17,7 +17,7 @@ public class CheckValidWord {
 //            System.out.println("user.home" + url2);
 
 
-            Scanner sc = new Scanner(new File("C:\\Data\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\outputCode.txt"));
+            Scanner sc = new Scanner(new File("C:\\Users\\Thomas\\Desktop\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\outputCode.txt"));
 
             //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

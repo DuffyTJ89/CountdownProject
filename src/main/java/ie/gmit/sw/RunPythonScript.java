@@ -10,9 +10,9 @@ public class RunPythonScript {
 
 		// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-//		String command = "C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\";
+		String command = "C:\\Users\\Thomas\\Desktop\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\";
 
-		String command = "C:\\Data\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\";
+//		String command = "C:\\Data\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\";
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

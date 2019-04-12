@@ -14,10 +14,10 @@ public class UserWordToFile {
 
 			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-//			writer = new BufferedWriter(new FileWriter(
-//					"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
+			writer = new BufferedWriter(new FileWriter(
+					"C:\\Users\\Thomas\\Desktop\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"));
 
-			writer = new BufferedWriter(new FileWriter("C:\\Data\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"));
+//			writer = new BufferedWriter(new FileWriter("C:\\Data\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"));
 
 			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
