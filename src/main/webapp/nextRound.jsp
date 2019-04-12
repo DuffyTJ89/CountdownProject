@@ -50,7 +50,7 @@
 				<div>&nbsp;</div>
 
 				<div id="Word_form">
-					<form action="ContinueRunGame" method="post" name="frm1">
+					<form action="StartGame" method="post" name="frm1">
 
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i

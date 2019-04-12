@@ -2,7 +2,6 @@ package ie.gmit.sw;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
 
 import javax.servlet.RequestDispatcher;
@@ -14,19 +13,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/FirstRunGame")
-public class FirstRunGame extends HttpServlet {
+/**
+ * Servlet implementation class StartGame
+ */
+@WebServlet("/StartGame")
+public class StartGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public FirstRunGame() {
+	public StartGame() {
 		super();
-
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String userWord="";
 
 		HttpSession session = request.getSession();
 
@@ -41,78 +40,53 @@ public class FirstRunGame extends HttpServlet {
 		int PyScriptResponse = RunPythonScript.run();// run the python script to check the user word against the
 		// dictionary API
 
-		System.out.println("PyScriptResponse " + PyScriptResponse);
-
+		System.out.println("countinueRun pyResp " + PyScriptResponse);
 		if (PyScriptResponse == 1) {
 
 			boolean wordIsValid = CheckValidWord.check();
 
 			if (wordIsValid = true) {
 
-				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //				Scanner sc = new Scanner(new File(
 //						"C:\\Users\\Thomas\\Desktop\\MajoCountdown\\CountdownProject\\src\\ie\\gmit\\sw\\output.txt"));
 
 				Scanner sc = new Scanner(new File("C:\\Data\\CountdownProject\\src\\main\\java\\ie\\gmit\\sw\\output.txt"));
 
-				// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				//String userWord = sc.nextLine();
+
+				String userWord;
 				try{//if the file is empty set user word to empty string
 					userWord = sc.nextLine();
 				}catch(Exception e){
 					userWord = " ";
 				}
 
-
 				int lettersUsed = CompareWordToLetters.compare(userWord, gameScore);
 
 				int currentScore = RoundsAndScoring.cScore;
 
-				System.out.println("Round befores : " + roundNum);
-
 				boolean ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
 
-				if (ChechkedRoundNum == true) {
-					// writer.println("<h3> Round : " + roundNum + "/5 </h3>");
+				String uWord = CompareWordToLetters.userWordFinal;
 
-					List<String> randomLetters = GenerateRandomLetters.list();
+				sc.close();
 
-					String uWord = CompareWordToLetters.userWordFinal;
+				session.setAttribute("sUserWord", uWord);
+				session.setAttribute("sRoundNum", roundNum);
+				session.setAttribute("sName", userName);
+				session.setAttribute("sGameScore", currentScore);
 
-					session.setAttribute("sUserWord", uWord);
+				ServletContext ctx = getServletContext();
 
-					session.setAttribute("sRoundNum", roundNum);
+				RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
+				dispatcher.forward(request, response);
 
-					session.setAttribute("sName", userName);
+			} // end wordIsvalid
 
-					session.setAttribute("sGameScore", currentScore);
-
-					ServletContext ctx = getServletContext();
-
-					RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
-					dispatcher.forward(request, response);
-
-				} else {
-					// TODO game over
-				}
-
-			} // end doPost
-
-		} else {
-			System.out.println("word is invalid");
-			GenerateRandomLetters.list();
-
-			session.setAttribute("sRoundNum", roundNum);
-			session.setAttribute("sName", userName);
-			int currentScore = 0;
-			session.setAttribute("sGameScore", currentScore);
-
-			ServletContext ctx = getServletContext();
-			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
-			dispatcher.forward(request, response);
-		}
-
-		session.setAttribute("sGameScore", gameScore);
+		} // end PyScriptResponse
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

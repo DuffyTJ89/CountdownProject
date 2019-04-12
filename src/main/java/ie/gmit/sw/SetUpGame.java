@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/newGame")
+@WebServlet("/SetUpGame")
 public class SetUpGame extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -65,7 +65,7 @@ public class SetUpGame extends HttpServlet {
 
 			ServletContext ctx = getServletContext();
 
-			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/firstRound.jsp");
+			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/nextRound.jsp");
 			dispatcher.forward(request, response);
 
 		} else {
@@ -75,4 +75,4 @@ public class SetUpGame extends HttpServlet {
 
 	}// end doPost
 
-}// end class NewGame
+}// end class SetUpGame

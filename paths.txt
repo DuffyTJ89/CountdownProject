@@ -12,7 +12,7 @@ CheckValidWord.java
 output.txt:
 -------------
 
-ContinueRunGame.java
+StartGame.java
 FirstRunGame.java
 UserWordToFile.java
 

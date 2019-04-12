@@ -64,7 +64,7 @@ public class ContinueGame extends HttpServlet {
 
 			ServletContext ctx = getServletContext();
 
-			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/newRound.jsp");
+			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/nextRound.jsp");
 			dispatcher.forward(request, response);
 
 		} else {
