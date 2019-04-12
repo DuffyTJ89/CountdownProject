@@ -10,57 +10,51 @@
 	crossorigin="anonymous">
 <!-- CSS file -->
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
-<!-- jQuery File, js scripts -->
+<!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/button_links.js"></script>
-<script type="text/javascript" src="resources/js/messages.js"></script>
 <script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
 <body class="text-center">
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
-		<img id="loading-image" src="resources/images/loading.gif"
-			alt="loading" />
 
 		<div>
-			<img
-				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
-				alt="CountdownLogo" />
+			<div>&nbsp;</div>
+			<img id="loading-image" src="resources/images/loading.gif" alt="loading" />
+			<img src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png" alt="CountdownLogo" />
 		</div>
-
-		<div>&nbsp;</div>
 
 		<div class="row">
 			<div class="col-lg-4"></div>
 			<div class="col-lg-4">
 
-				<div class="finalRound-text">
-					<h1>GAME OVER</h1>
-					<h2>${sName},your final score : ${sGameScore}</h2>
+				<div class="rounds-text">
+					<!-- sRoundNum sName -->
+					<h2 class="welcome">${sName}, your results:</h2>
+					<h3>Round: ${sRoundNum}/5</h3>
+					<h3>Your word: ${sUserWord}</h3>
+					<h3>GameScore: ${sGameScore}</h3>
+				</div>
+
+				<div id="NextRound_form">
+					<form action="ContinueGame" method="post">
+						<button id="submit_btn" type="submit"
+							class="btn btn-primary btn-lg btn-block">Next Round</button>
+					</form>
 				</div>
 
 				<div>&nbsp;</div>
 
 				<div>
+					<button class="btn btn-warning btn-lg btn-block" onclick="rules()">Rules</button>
+
+					<div>&nbsp;</div>
+
 					<button class="btn btn-success btn-lg btn-block"
 						onclick="hScores()">HighScores</button>
-				</div>
-
-				<div>&nbsp;</div>
-
-				<div>
-					<button id="submit_btn" type="submit"
-						class="btn btn-primary btn-lg btn-block" onclick="newGame()">New
-						Game</button>
-				</div>
-
-				<div>&nbsp;</div>
-
-				<div align="center">
-					<h3 class="p-3 mb-2 text-danger">${db_save_error}</h3>
-					<h3 class="p-3 mb-2 text-danger">${db_save_success}</h3>
 				</div>
 
 			</div>

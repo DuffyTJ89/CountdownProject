@@ -20,13 +20,11 @@ html>
 <body class="text-center">
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
-		<img id="loading-image" src="resources/images/loading.gif"
-			alt="loading" />
 
 		<div>
-			<img
-				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
-				alt="CountdownLogo" />
+			<div>&nbsp;</div>
+			<img id="loading-image" src="resources/images/loading.gif" alt="loading" />
+			<img src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png" alt="CountdownLogo" />
 		</div>
 
 		<h1 class="welcome">Countdown Rules</h1>

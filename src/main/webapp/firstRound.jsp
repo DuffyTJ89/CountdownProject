@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Online Countdown Test</title>
+<title>Online Countdown</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -15,28 +15,23 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/button_links.js"></script>
 <script type="text/javascript" src="resources/js/loader.js"></script>
+
 </head>
-
-
 
 <body onload="setTimeout(function() { document.frm1.submit() }, 31000)" class="text-center">
 
 <audio autoplay>
-  <source src="resources/mp3/CountdownClock.mp3" type="audio/mpeg">
+  <source src="CountdownClock.mp3" type="audio/mpeg">
 </audio>
 
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
-		<img id="loading-image" src="resources/images/loading.gif"
-			alt="loading" />
 
 		<div>
-			<img
-				src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png"
-				alt="CountdownLogo" />
+			<div>&nbsp;</div>
+			<img id="loading-image" src="resources/images/loading.gif" alt="loading" />
+			<img src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png" alt="CountdownLogo" />
 		</div>
-
-		<div>&nbsp;</div>
 
 		<div class="row">
 			<div class="col-lg-4"></div>
@@ -44,7 +39,7 @@
 
 				<div class="rounds-text">
 					<!-- sRoundNum sName -->
-					<h3 class="welcome">Welcome ${sName}</h3>
+					<h2 class="welcome">Welcome ${sName}</h2>
 					<h3>Round: ${sRoundNum}/5</h3>
 					<h3>GameScore: ${sGameScore}</h3>
 					<h3 class="welcome">Your Letters are:</h3>
@@ -54,7 +49,7 @@
 				<div>&nbsp;</div>
 
 				<div id="Word_form">
-					<form action="ContinueRunGame" method="post" name="frm1">
+					<form action="FirstRunGame" method="post" name="frm1">
 
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i
