@@ -15,11 +15,15 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/button_links.js"></script>
 <script type="text/javascript" src="resources/js/loader.js"></script>
+
+
 </head>
 
 
 
 <body onload="setTimeout(function() { document.frm1.submit() }, 31000)" class="text-center">
+
+
 
 <audio autoplay>
   <source src="resources/mp3/CountdownClock.mp3" type="audio/mpeg">
@@ -32,6 +36,27 @@
 			<div>&nbsp;</div>
 			<img id="loading-image" src="resources/images/loading.gif" alt="loading" />
 			<img src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png" alt="CountdownLogo" />
+		</div>
+
+		<!--TODO make this appear better on screen-->
+		<div>
+
+			<p id = "timer" onload="timerCountDown()"></p>
+
+			<script type="text/javascript">
+				var timeLeft = 30;
+
+				var timerID = setInterval(timerCountDown, 1000);
+
+				function timerCountDown(){
+					if (timeLeft == 0){
+						clearTimeout(timerCountDown);
+					}else{
+						document.getElementById("timer").innerHTML = timeLeft + ' Seconds remaining';
+						timeLeft--;
+					}
+				}
+			</script>
 		</div>
 
 		<div class="row">
