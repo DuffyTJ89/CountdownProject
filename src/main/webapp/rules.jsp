@@ -40,12 +40,12 @@ html>
 						which they must make a valid English word</h4>
 					<h4>3) The more letters from the 10 given the player uses the
 						higher their score will be</h4>
-					<h4>4) The player does NOT have to use all the letter and is
+					<h4>4) The player does NOT have to use all the letters and is
 						permitted to use letters outside the 10 but will not receive
 						points for those letters</h4>
 					<h4>5) The player's word will be check against the Oxford
 						English Dictionary and only words present in said dictionary will
-						be accepted</h4>
+						be accepted, if your word is not accepted you will receive a 0 score</h4>
 
 					<h3 class="lettersValueHeader-text">Letter values are as
 						follows:</h3>
