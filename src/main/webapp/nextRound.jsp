@@ -41,7 +41,7 @@
 		<!--TODO make this appear better on screen-->
 		<div>
 
-			<p id = "timer" onload="timerCountDown()"></p>
+			<h3 style="color:ghostwhite;"><p  id = "timer" onload="timerCountDown()"></p></h3>
 
 			<script type="text/javascript">
 				var timeLeft = 30;
