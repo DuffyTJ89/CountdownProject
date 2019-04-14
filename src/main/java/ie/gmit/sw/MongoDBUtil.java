@@ -55,11 +55,11 @@ public class MongoDBUtil {
 		// Form a where query
 		BasicDBObject whereQuery = new BasicDBObject();
 		whereQuery.put("$and", obj);
-		System.out.println("Mongo query is?= " + whereQuery.toString());
+		System.out.println("Mongo query: " + whereQuery.toString());
 
 		FindIterable<Document> cursor = col.find(whereQuery);
 		for (Document doc : cursor) {
-			System.out.println("Found?= " + doc);
+			System.out.println("Found?: " + doc);
 			userFound = true;
 		}
 		return userFound;
@@ -100,7 +100,7 @@ public class MongoDBUtil {
 		// Form a where query
 		BasicDBObject whereQuery = new BasicDBObject();
 		whereQuery.put("$and", obj); //Mongo query requires a dollar character
-		System.out.println("Mongo query is?= " + whereQuery.toString());
+		System.out.println("Mongo query: " + whereQuery.toString());
 		
 		FindIterable<Document> cursor = col.find(whereQuery);
 		for (Document doc : cursor) {

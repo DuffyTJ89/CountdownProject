@@ -26,11 +26,9 @@ public class CompareWordToLetters {
 		userWord = userWord.toUpperCase();
 
 		// TODO print this line to the results page
-		System.out.println("Your answer of ' " + userWord + " ' uses  ");
+		System.out.println("Your word ' " + userWord + " ' uses  ");
 
 		userWord(userWord);
-
-		// System.out.println("without list "+ noListString);
 
 		// **************************//
 		// source:
@@ -133,7 +131,6 @@ public class CompareWordToLetters {
 				case 'Z':
 					roundScore += 10;
 					break;
-
 			}
 
 		}
@@ -141,7 +138,7 @@ public class CompareWordToLetters {
 
 		// *************************//
 		// add the user score up
-		System.out.println("Total score for this round is : " + roundScore);
+		System.out.println("Total score for this round: " + roundScore);
 
 		RoundsAndScoring.updateUserGameScore(roundScore, gameScore);
 

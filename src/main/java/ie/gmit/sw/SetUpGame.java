@@ -1,17 +1,11 @@
 //Resources:
 // https://www.codejava.net/coding/java-servlet-and-jsp-hello-world-tutorial-with-eclipse-maven-and-apache-tomcat
-
 package ie.gmit.sw;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
-//import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -55,7 +49,7 @@ public class SetUpGame extends HttpServlet {
 
 			session.setAttribute("sName", userName);
 
-			session.setAttribute("sGameScore", gameScore);
+			session.setAttribute("sCurrentTotalScore", gameScore);
 
 			ServletContext ctx = getServletContext();
 

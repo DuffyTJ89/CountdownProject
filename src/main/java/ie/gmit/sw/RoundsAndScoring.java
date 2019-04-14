@@ -1,9 +1,5 @@
 package ie.gmit.sw;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
 public class RoundsAndScoring {
 
 	static int cScore;

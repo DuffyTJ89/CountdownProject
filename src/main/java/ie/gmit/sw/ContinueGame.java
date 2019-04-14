@@ -1,9 +1,6 @@
 package ie.gmit.sw;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -37,23 +34,19 @@ public class ContinueGame extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		int gameScore = (int) session.getAttribute("sGameScore");
+		int gameScore = (int) session.getAttribute("sCurrentTotalScore");
 		int roundNum = (int) session.getAttribute("sRoundNum");
 		String userName = (String) session.getAttribute("sName");
 		String date = (String) session.getAttribute("sDate");
 
-		//sUserWord
-
 		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
 
 		boolean CheckedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
-		
-		//boolean CheckedUserWordWithDic = Dictionary.wordExists(userWord);
 
 		session.setAttribute("sRoundNum", roundNum);
 
 		session.setAttribute("sName", userName);
-		session.setAttribute("sGameScore", gameScore);
+		session.setAttribute("sCurrentTotalScore", gameScore);
 		session.setAttribute("sDate", date);
 
 		//initialize database saving messages

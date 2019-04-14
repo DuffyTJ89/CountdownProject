@@ -34,7 +34,7 @@
 
 				<div class="finalRound-text">
 					<h1>GAME OVER</h1>
-					<h2>${sName}, your final score: ${sGameScore}</h2
+					<h2>${sName}, your final score: ${sCurrentTotalScore}</h2
 				</div>
 
 				<div>&nbsp;</div>

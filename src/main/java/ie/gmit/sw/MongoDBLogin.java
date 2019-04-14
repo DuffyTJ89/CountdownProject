@@ -45,7 +45,6 @@ public class MongoDBLogin extends HttpServlet {
 				req.getRequestDispatcher("/index.jsp").forward(req, resp);
 				e.printStackTrace();
 			}
-
 		}
 	}// handleRequest
 

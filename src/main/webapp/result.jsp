@@ -33,10 +33,10 @@
 
 				<div class="rounds-text">
 					<!-- sRoundNum sName -->
-					<h2 class="welcome">${sName}, your results:</h2>
+					<h2 class="welcome">${sName}'s round ${sRoundNum} score: ${roundScore}</h2>
 					<h3>Round: ${sRoundNum}/5</h3>
 					<h3>Your word: ${sUserWord}</h3>
-					<h3>GameScore: ${sGameScore}</h3>
+					<h3>Total Score: ${sCurrentTotalScore}</h3>
 				</div>
 
 				<div id="NextRound_form">
