@@ -13,7 +13,6 @@
 <!-- jQuery File, js scriptss -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/button_links.js"></script>
 <script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
@@ -49,12 +48,9 @@
 				<div>&nbsp;</div>
 
 				<div>
-					<button class="btn btn-warning btn-lg btn-block" onclick="rules()">Rules</button>
-
+					<a class="btn btn-warning btn-lg btn-block" href="rules.jsp" target="_blank">Rules</a>
 					<div>&nbsp;</div>
-
-					<button class="btn btn-success btn-lg btn-block"
-						onclick="hScores()">HighScores</button>
+					<a class="btn btn-success btn-lg btn-block" href="highScores.jsp" target="_blank">High Scores</a>
 				</div>
 
 			</div>

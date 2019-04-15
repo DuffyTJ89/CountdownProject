@@ -13,7 +13,6 @@
 <!-- jQuery File, js scripts -->
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/button_links.js"></script>
 <script type="text/javascript" src="resources/js/messages.js"></script>
 <script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
@@ -40,16 +39,9 @@
 				<div>&nbsp;</div>
 
 				<div>
-					<button class="btn btn-success btn-lg btn-block"
-						onclick="hScores()">HighScores</button>
-				</div>
-
-				<div>&nbsp;</div>
-
-				<div>
-					<button id="submit_btn" type="submit"
-						class="btn btn-primary btn-lg btn-block" onclick="GameSetup()">New
-						Game</button>
+					<a class="btn btn-success btn-lg btn-block" href="highScores.jsp" target="_blank">High Scores</a>
+					<div>&nbsp;</div>
+					<a class="btn btn-primary btn-lg btn-block" href="welcome.jsp" target="_blank">New Game</a>
 				</div>
 
 				<div>&nbsp;</div>

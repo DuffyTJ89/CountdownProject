@@ -19,10 +19,6 @@ import javax.servlet.http.HttpSession;
 public class GameResults extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public GameResults() {
-		super();
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -85,6 +81,9 @@ public class GameResults extends HttpServlet {
 			RequestDispatcher dispatcher = ctx.getRequestDispatcher("/finalResult.jsp");
 			dispatcher.forward(request, response);
 		}
+
+		//display database results
+
 
 	}//doGet
 

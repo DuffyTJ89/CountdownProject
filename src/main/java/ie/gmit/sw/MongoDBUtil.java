@@ -65,10 +65,10 @@ public class MongoDBUtil {
 
 	// Method to save user results to the database
 	public static void saveResult(String userName, int gameScore, String dateNow) throws Throwable {
-		MongoCollection<Document> col = getDB().getCollection("games");		
+		MongoCollection<Document> col = getDB().getCollection("games");
 		dateNow = dateFormat.format(new Date());
 		// Add Document to Database/Collection
-		try {
+
 			Document myNewDoc = new Document();// Create a new Mongo Document
 
 			System.out.println("Add Documents to Database/Collection");
@@ -81,30 +81,28 @@ public class MongoDBUtil {
 				System.out.println(doc.toJson());
 			}
 
-		} catch (Exception e) {
-			System.out.println("User " + (col.countDocuments() - 1) + " already added");
-		}
-
 		// mongoClntObj.close();
 	}// saveResult
 	
 	public static void displayResults(String userName, int gameScore, String dateNow) throws Throwable {
+
 		MongoCollection<Document> col = getDB().getCollection("games");
-		
-		// Get the particular record from the mongodb collection
-		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
-		obj.add(new BasicDBObject("name", userName).append("score", gameScore).append("date", dateNow));
-		
+
+        List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
+        obj.add(new BasicDBObject("name", userName));
+        obj.add(new BasicDBObject("score", gameScore));
+        obj.add(new BasicDBObject("date", dateNow));
+
 		// Form a where query
 		BasicDBObject whereQuery = new BasicDBObject();
-		whereQuery.put("$and", obj); //Mongo query requires a dollar character
+		whereQuery.put("$and", obj);
 		System.out.println("Mongo query: " + whereQuery.toString());
-		
+
 		FindIterable<Document> cursor = col.find(whereQuery);
 		for (Document doc : cursor) {
-			System.out.println(doc.toJson());
+			System.out.println("Found?: " + doc);
 		}
-		
+
 	}//displayResults
 
 }// MongoDBUtil

@@ -20,10 +20,6 @@ public class GameSetup extends HttpServlet {
 	// static String roundNumString = "";
 	boolean chechkedRoundNum;
 
-	public GameSetup() {
-		super();
-	}// end NewGam()
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

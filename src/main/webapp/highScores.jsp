@@ -17,6 +17,7 @@
 </head>
 
 <body class="text-center">
+<h1>Blablab</h1>
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
 
@@ -31,6 +32,16 @@
 			<div class="col-lg-4">
 
 				<h1 class="highscores-text">Database Highscores</h1>
+
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Score</th>
+						<th>Date</th>
+					</tr>
+				</table>
+
+				<a href="javascript:history.back()" class="btn btn-primary">Back</a>
 
 			</div>
 			<div class="col-lg-4"></div>
