@@ -33,14 +33,14 @@
 
 				<div class="rounds-text">
 					<!-- sRoundNum sName -->
-					<h2 class="welcome">${sName}'s round ${sRoundNum} score: ${roundScore}</h2>
+					<h2 class="welcome">${sName}'s round ${sRoundNum} score: </h2>
 					<h3>Round: ${sRoundNum}/5</h3>
-					<h3>Your word: ${sUserWord}</h3>
+					<h3>Your word: ${sUserGuessWord}</h3>
 					<h3>Total Score: ${sCurrentTotalScore}</h3>
 				</div>
 
 				<div id="NextRound_form">
-					<form action="ContinueGame" method="post">
+					<form action="GameResults" method="post">
 						<button id="submit_btn" type="submit"
 							class="btn btn-primary btn-lg btn-block">Next Round</button>
 					</form>

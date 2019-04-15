@@ -18,13 +18,12 @@
     <script type="text/javascript" src="resources/js/loader.js"></script>
     <script type="text/javascript" src="resources/js/timer.js"></script>
     <script type="text/javascript" src="resources/js/form_autosubmit.js"></script>
+    <script type="text/javascript" src="resources/js/audio.js"></script>
 </head>
 
 <body class="text-center">
 
-<audio autoplay>
-    <source src="resources/mp3/CountdownClock.mp3" type="audio/mpeg">
-</audio>
+<audio id="audio_sound" src="resources/mp3/CountdownClock.mp3" type="audio/mpeg" preload="auto"></audio>
 
 <div class="container-fluid">
     <div id="loading-bg"></div>
@@ -46,18 +45,18 @@
                 <h3>Round: ${sRoundNum}/5</h3>
                 <h3>Total Score: ${sCurrentTotalScore}</h3>
                 <h3 class="welcome">Your Random Letters:</h3>
-                <h3>${sRandomLetters}</h3>
+                <h2 class="rand_style">${sRandomLetters}</h2>
             </div>
 
             <div>&nbsp;</div>
 
             <div>
-                <form action="StartGame" method="post" id="word_form">
+                <form action="GamePlay" method="post" id="word_form">
 
                     <div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i
                                     class="glyphicon glyphicon-pencil"></i>
-							</span> <input type="text" name="userGuess" value=""
+							</span> <input type="text" name="userGuessWord" value=""
                                            class="form-control" placeholder="Enter Your Word ..."
                                            maxlength="10">
                     </div>

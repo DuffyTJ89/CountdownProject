@@ -13,14 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/SetUpGame")
-public class SetUpGame extends HttpServlet {
+@WebServlet("/GameSetup")
+public class GameSetup extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	// static String roundNumString = "";
-	boolean ChechkedRoundNum;
+	boolean chechkedRoundNum;
 
-	public SetUpGame() {
+	public GameSetup() {
 		super();
 	}// end NewGam()
 
@@ -28,20 +28,20 @@ public class SetUpGame extends HttpServlet {
 			throws ServletException, IOException {
 
 		String userName = request.getParameter("userName");
-	
-		int roundNum = RoundsAndScoring.setUserRoundNum();// Initialize the user's round number to zero
+
+		// Initialize the user's round number and score to zero
+		int roundNum = RoundsAndScoring.setUserRoundNum();
 		int gameScore = RoundsAndScoring.setUserGameScore();
 
 		roundNum = RoundsAndScoring.updateUserRoundNum(roundNum);
-		ChechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
+		chechkedRoundNum = RoundsAndScoring.checkRoundNumLess5(roundNum);
 
-		if (ChechkedRoundNum == true) {
+		if (chechkedRoundNum == true) {
 
-
-			List<String> randomLetters = GenerateRandomLetters.list();
+			List<String> randomLettersList = GenerateRandomLetters.list();
+			String randomLetters = String.join(" ", randomLettersList);
 
 			HttpSession session = request.getSession();
-
 
 			session.setAttribute("sRoundNum", roundNum);
 
@@ -63,4 +63,4 @@ public class SetUpGame extends HttpServlet {
 
 	}// end doPost
 
-}// end class SetUpGame
+}// end class GameSetup

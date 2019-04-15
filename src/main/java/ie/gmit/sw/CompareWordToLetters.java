@@ -6,31 +6,27 @@ import java.util.Set;
 public class CompareWordToLetters {
 
 	static String wordString = "";
-	static String userWordFinal = "";
+	static String userGuessWordFinal = "";
 
 	public static void listToString(String noListString) {
-		// TODO Auto-generated method stub
 
 		wordString = noListString;
-
 	}
 
-	public static void userWord(String uWord) {
+	public static void userGuessWord(String guessWord) {
 
-		userWordFinal = uWord;
-
+		userGuessWordFinal = guessWord;
 	}
 
-	static int compare(String userWord, int gameScore) {
+	static int compare(String userGuessWord, int gameScore) {
 
-		userWord = userWord.toUpperCase();
+		userGuessWord = userGuessWord.toUpperCase();
 
 		// TODO print this line to the results page
-		System.out.println("Your word ' " + userWord + " ' uses  ");
+		System.out.println("Your word ' " + userGuessWord + " ' uses  ");
 
-		userWord(userWord);
+		userGuessWord(userGuessWord);
 
-		// **************************//
 		// source:
 		// https://stackoverflow.com/questions/30662384/accept-2-strings-and-display-common-chars-in-them
 		// check how many letter the user uses
@@ -43,7 +39,7 @@ public class CompareWordToLetters {
 		for (char c : wordString.toCharArray()) {
 			set1.add(c);
 		}
-		for (char c : userWord.toCharArray()) {
+		for (char c : userGuessWord.toCharArray()) {
 			set2.add(c);
 		}
 

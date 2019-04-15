@@ -6,6 +6,6 @@ function hScores() {
     window.open("highScores.jsp");
 };
 
-function SetUpGame() {
+function GameSetup() {
     window.open("welcome.jsp", "_self");
 };

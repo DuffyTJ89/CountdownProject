@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class StartGame
+ * Servlet implementation class GamePlay
  */
-@WebServlet("/StartGame")
-public class StartGame extends HttpServlet {
+@WebServlet("/GamePlay")
+public class GamePlay extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -26,7 +26,7 @@ public class StartGame extends HttpServlet {
         int roundNum = (int) session.getAttribute("sRoundNum");
         String userName = (String) session.getAttribute("sName");
 
-        String uGuess = request.getParameter("userGuess");
+        String uGuess = request.getParameter("userGuessWord");
         System.out.println("user guess word: " + uGuess);
 
         boolean wordIsValid = Dictionary.wordExists(uGuess);
@@ -39,17 +39,16 @@ public class StartGame extends HttpServlet {
 
             int currentTotalScore = RoundsAndScoring.cScore;
 
-            String uWord = CompareWordToLetters.userWordFinal;
+            String guessWord = CompareWordToLetters.userGuessWordFinal;
 
             //sc.close();
 
-            session.setAttribute("sUserWord", uWord);
+            session.setAttribute("sUserGuessWord", guessWord);
             session.setAttribute("sRoundNum", roundNum);
             session.setAttribute("sName", userName);
             session.setAttribute("sCurrentTotalScore", currentTotalScore);
 
             ServletContext ctx = getServletContext();
-
             RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
             dispatcher.forward(request, response);
 
@@ -57,25 +56,20 @@ public class StartGame extends HttpServlet {
 
         else {
 
-
             int currentTotalScore = RoundsAndScoring.cScore;
 
-            System.out.println();
-
-            session.setAttribute("sUserWord", uGuess);
+            session.setAttribute("sUserGuessWord", uGuess);
             session.setAttribute("sRoundNum", roundNum);
             session.setAttribute("sName", userName);
             session.setAttribute("sCurrentTotalScore", currentTotalScore);
             System.out.println();
 
             ServletContext ctx = getServletContext();
-
             RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
             dispatcher.forward(request, response);
         }
 
-    } // end PyScriptResponse
-    //}
+    }//doGet
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

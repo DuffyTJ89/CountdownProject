@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ContinueGame
+ * Servlet implementation class GameResults
  */
-@WebServlet("/ContinueGame")
-public class ContinueGame extends HttpServlet {
+@WebServlet("/GameResults")
+public class GameResults extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ContinueGame() {
+	public GameResults() {
 		super();
 	}
 
@@ -55,7 +55,8 @@ public class ContinueGame extends HttpServlet {
 
 		if (CheckedRoundNum == true) {
 
-			List<String> randomLetters = GenerateRandomLetters.list();
+			List<String> randomLettersList = GenerateRandomLetters.list();
+			String randomLetters = String.join(" ", randomLettersList);
 
 			request.setAttribute("sRandomLetters", randomLetters);
 
@@ -87,4 +88,4 @@ public class ContinueGame extends HttpServlet {
 
 	}//doGet
 
-}//ContinueGame
+}//GameResults

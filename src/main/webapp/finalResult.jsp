@@ -48,7 +48,7 @@
 
 				<div>
 					<button id="submit_btn" type="submit"
-						class="btn btn-primary btn-lg btn-block" onclick="SetUpGame()">New
+						class="btn btn-primary btn-lg btn-block" onclick="GameSetup()">New
 						Game</button>
 				</div>
 

@@ -38,7 +38,7 @@
 
 				<div id="User_form">
 
-					<form action="SetUpGame" method="post">
+					<form action="GameSetup" method="post">
 						<!----- USER FORM ------>
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i

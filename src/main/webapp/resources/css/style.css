@@ -19,6 +19,11 @@ body {
 .lettersValueHeader-text {
     color: red !important;
 }
+.rand_style {
+    font-weight: bold;
+    font-size: 240%;
+    color: #00ffd5;
+}
 /*loader background*/
 #loading-bg {
     width: 100%;
