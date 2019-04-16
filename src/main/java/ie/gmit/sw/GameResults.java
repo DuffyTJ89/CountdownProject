@@ -28,6 +28,8 @@ public class GameResults extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		System.out.println("in results servlet");
+
 		HttpSession session = request.getSession();
 
 		int gameScore = (int) session.getAttribute("sCurrentTotalScore");
@@ -82,19 +84,7 @@ public class GameResults extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 
-		//display database results
-		try {
-			request.setAttribute("listScores", MongoDBUtil.displayResults(userName, gameScore, date));
-			//request.setAttribute("listScores", new MongoDBUtil().displayResults(userName, gameScore, date));
-			//MongoDBUtil.displayResults(userName, gameScore, date);
-			System.out.println("Data displayed successfully");
-		} catch (Throwable throwable) {
-			System.out.println("Data displayed failed");
-			throwable.printStackTrace();
-		}
-		ServletContext ctx = getServletContext();
-		RequestDispatcher dispatcher = ctx.getRequestDispatcher("/highScores.jsp");
-		dispatcher.forward(request, response);
+
 
 	}//doGet
 

@@ -73,6 +73,7 @@
                 <a class="btn btn-warning btn-lg btn-block" href="rules.jsp" target="_blank">Rules</a>
                 <div>&nbsp;</div>
                 <a class="btn btn-success btn-lg btn-block" href="highScores.jsp" target="_blank">High Scores</a>
+
             </div>
 
         </div>
