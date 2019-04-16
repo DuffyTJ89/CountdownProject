@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,7 +19,7 @@
 </head>
 
 <body class="text-center">
-<h1>Blablab</h1>
+
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
 
@@ -39,9 +41,17 @@
 						<th>Score</th>
 						<th>Date</th>
 					</tr>
-				</table>
 
-				<a href="javascript:history.back()" class="btn btn-primary">Back</a>
+					<tr>
+						<c:forEach items="${listScores}" var="listScore">
+						<tr>
+							<td>${listScore.name}</td>
+							<td>${listScore.score}</td>
+							<td>${listScore.date}</td>
+						</tr>
+					</c:forEach>
+					</tr>
+				</table>
 
 			</div>
 			<div class="col-lg-4"></div>

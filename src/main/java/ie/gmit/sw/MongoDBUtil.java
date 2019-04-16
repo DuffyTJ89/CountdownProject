@@ -1,3 +1,5 @@
+//source:
+//https://examples.javacodegeeks.com/software-development/mongodb/mongodb-and-jsp-servlet-example/
 package ie.gmit.sw;
 
 import java.text.SimpleDateFormat;
@@ -84,25 +86,22 @@ public class MongoDBUtil {
 		// mongoClntObj.close();
 	}// saveResult
 	
-	public static void displayResults(String userName, int gameScore, String dateNow) throws Throwable {
-
+	public static boolean displayResults(String userName, int gameScore, String date) throws Throwable {
+		boolean docFound = false;
 		MongoCollection<Document> col = getDB().getCollection("games");
 
-        List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
-        obj.add(new BasicDBObject("name", userName));
-        obj.add(new BasicDBObject("score", gameScore));
-        obj.add(new BasicDBObject("date", dateNow));
+		Document myNewDoc = new Document();
 
-		// Form a where query
-		BasicDBObject whereQuery = new BasicDBObject();
-		whereQuery.put("$and", obj);
-		System.out.println("Mongo query: " + whereQuery.toString());
+		System.out.println("Show Documents in database");
+		myNewDoc.append("name", userName).append("score", gameScore).append("date", date);
 
-		FindIterable<Document> cursor = col.find(whereQuery);
-		for (Document doc : cursor) {
-			System.out.println("Found?: " + doc);
+		FindIterable<Document> findDocs = col.find();
+		for (Document doc : findDocs) {// iterate over results of find()
+			System.out.println(doc.toJson());
+			docFound = true;
 		}
 
+		return docFound;
 	}//displayResults
 
 }// MongoDBUtil
