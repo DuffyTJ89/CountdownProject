@@ -59,4 +59,20 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 101;
 }
+thead {
+    color: greenyellow;
+    font-size: 150%;
+}
+tbody {
+    color: darkturquoise;
+    font-size: 150%;
+}
+tbody tr {
+    transition: background-color .5s;
+}
+tbody tr:hover {
+    background-color: gold;
+}
+
+
 

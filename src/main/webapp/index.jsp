@@ -45,7 +45,7 @@
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input type="text"
 								class="form-control" id="login_id"
-								placeholder="Enter login id ..." name="login_id" maxlength="10">
+								placeholder="Enter Name ..." name="login_id" maxlength="10">
 						</div>
 
 						<div>&nbsp;</div>
@@ -54,7 +54,7 @@
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-lock"></i></span> <input type="password"
 								class="form-control" id="login_pwd"
-								placeholder="Enter password ..." name="login_pwd">
+								placeholder="Enter Password ..." name="login_pwd">
 						</div>
 
 						<!----- SUBMIT BUTTON ------>

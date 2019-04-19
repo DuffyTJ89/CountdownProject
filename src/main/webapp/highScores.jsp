@@ -35,13 +35,18 @@
 
 				<h1 class="highScores-text">Database Highscores</h1>
 
-				<table>
-					<tr>
-						<th>Name</th>
-						<th>Score</th>
-						<th>Date</th>
-					</tr>
+				<div>&nbsp;</div>
 
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th class="text-center">Name</th>
+							<th class="text-center">Score</th>
+							<th class="text-center">Date</th>
+						</tr>
+					</thead>
+
+					<tbody>
 						<c:forEach items="${topTen}" var="gameResult" >
 							<tr>
 								<td>${gameResult.userName}</td>
@@ -49,6 +54,7 @@
 								<td>${gameResult.date}</td>
 							</tr>
 						</c:forEach>
+					</tbody>
 				</table>
 
 			</div>

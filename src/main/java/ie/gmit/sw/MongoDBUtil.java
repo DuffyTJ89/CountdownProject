@@ -81,14 +81,7 @@ public class MongoDBUtil {
 			myNewDoc.append("name", userName).append("score", gameScore).append("date", dateNow);
 
 			col.insertOne(myNewDoc);
-			
-//			FindIterable<Document> findDocs = col.find();
-//			for (Document doc : findDocs) {// iterate over results of find()
-//				System.out.println(doc.toJson());
-//			}
-
-//		 	mongoClntObj.close();
-	}// saveResult
+	}//saveResult
 	
 	public static List<GameResult> getTopTen() throws Throwable {
 		List<GameResult> result = new ArrayList<>();
