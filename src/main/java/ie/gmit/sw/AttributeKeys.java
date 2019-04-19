@@ -11,6 +11,7 @@ public class AttributeKeys {
     public static final String DATABASE_CONNECTION_ERROR = "Database Connection Error";
     public static final String DATA_SAVE_SUCCESS = "Data Saved Successfully";
     public static final String DATA_SAVE_FAIL = "Data Save Failed";
+    public static final String USER_LOGIN_ERROR = "Please enter login id and password";
 
 
 }

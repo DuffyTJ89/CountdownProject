@@ -23,7 +23,7 @@ public class UserLogin extends HttpServlet {
 
 		// Checking for null and empty values
 		if (login == null || pwd == null || login.trim().length() == 0 || pwd.trim().length() == 0) {
-			req.setAttribute("login_error", "Please enter login id and password");
+			req.setAttribute("login_error", AttributeKeys.USER_LOGIN_ERROR);
 			req.getRequestDispatcher("/index.jsp").forward(req, resp);
 		} else {
 

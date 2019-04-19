@@ -82,7 +82,8 @@ public class MongoDBUtil {
 
 			col.insertOne(myNewDoc);
 	}//saveResult
-	
+
+	//http://zetcode.com/db/mongodbjava/
 	public static List<GameResult> getTopTen() throws Throwable {
 		List<GameResult> result = new ArrayList<>();
 

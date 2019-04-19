@@ -40,9 +40,11 @@
 				<div>&nbsp;</div>
 
 				<div>
-					<a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
-					<div>&nbsp;</div>
 					<a class="btn btn-primary btn-lg btn-block" href="welcome.jsp">New Game</a>
+					<div>&nbsp;</div>
+					<a class="btn btn-danger btn-lg btn-block" href="index.jsp">Log Out</a>
+					<div>&nbsp;</div>
+					<a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
 				</div>
 
 				<div>&nbsp;</div>
