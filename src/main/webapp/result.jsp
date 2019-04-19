@@ -36,8 +36,7 @@
 					<!-- sRoundNum sName -->
 					<h2 class="welcome"><%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>'s round
 						<%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> score:${sRoundScore} </h2>
-					<h3>Round: <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> / <%= RoundResult.NO_OF_ROUNDS %></h3>
-					<h3>Your word: ${sUserGuessWord}</h3>
+					<h3>Your word: <%= request.getParameter(AttributeKeys.USER_GUESS_WORD) %></h3>
 					<h3>Total Score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h3>
 				</div>
 

@@ -60,18 +60,16 @@ body {
     z-index: 101;
 }
 thead {
-    color: greenyellow;
-    font-size: 150%;
-}
-tbody {
-    color: darkturquoise;
+    color: #34ff1e;
     font-size: 150%;
 }
 tbody tr {
+    color: #2ad1c2;
+    font-size: 150%;
     transition: background-color .5s;
 }
 tbody tr:hover {
-    background-color: gold;
+    background-color: #000000;
 }
 
 

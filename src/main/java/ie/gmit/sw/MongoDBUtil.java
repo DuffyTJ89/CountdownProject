@@ -49,7 +49,7 @@ public class MongoDBUtil {
 		boolean userFound = false;
 
 		// Get the mongodb collection.
-		MongoCollection<Document> col = getDB().getCollection("admin");
+		MongoCollection<Document> col = getDB().getCollection("user");
 
 		// Get the particular record from the mongodb collection
 		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();

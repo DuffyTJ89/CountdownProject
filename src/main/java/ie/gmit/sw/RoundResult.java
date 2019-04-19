@@ -41,7 +41,7 @@ public class RoundResult extends HttpServlet {
         HttpSession session = request.getSession();
 
         int currentTotalScore = (int) session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE);
-        String uGuess = request.getParameter("userGuessWord");
+        String uGuess = request.getParameter(AttributeKeys.USER_GUESS_WORD);
 
         int roundScore = 0; //0 explicitly - if wrong guessing
 
@@ -83,7 +83,7 @@ public class RoundResult extends HttpServlet {
     private static void showResults(HttpServletRequest request, HttpServletResponse response, ServletContext ctx)
             throws ServletException, IOException {
 
-        request.setAttribute("sUserGuessWord", request.getParameter("userGuessWord"));
+        //request.setAttribute("userGuessWord", request.getParameter(AttributeKeys.USER_GUESS_WORD));
 
         RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
         dispatcher.forward(request, response);

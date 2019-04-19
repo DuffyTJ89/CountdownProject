@@ -37,7 +37,7 @@
 
 				<div>&nbsp;</div>
 
-				<table class="table table-bordered">
+				<table class="table">
 					<thead>
 						<tr>
 							<th class="text-center">Name</th>
