@@ -48,8 +48,8 @@
 				<div>&nbsp;</div>
 
 				<div align="center">
-					<h3 class="p-3 mb-2 text-danger">${db_save_error}</h3>
-					<h3 class="p-3 mb-2 text-danger">${db_save_success}</h3>
+					<h3 class="p-3 mb-2 text-danger">${data_save_fail}</h3>
+					<h3 class="p-3 mb-2 text-danger">${data_save_success}</h3>
 				</div>
 
 			</div>

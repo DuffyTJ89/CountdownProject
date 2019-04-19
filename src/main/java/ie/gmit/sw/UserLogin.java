@@ -30,16 +30,17 @@ public class UserLogin extends HttpServlet {
 			try {
 				boolean isUserFound = MongoDBUtil.searchUserInDb(login, pwd);
 				if (isUserFound) {
+					System.out.println("Database Login Successful");
 					req.getSession().setAttribute(AttributeKeys.SESSION_USER_NAME, login);
 					req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
 				} else {
-					req.setAttribute("login_error",
-							"You are not an authorised user. Please check with administrator.");
+					System.out.println("Database Login Error");
+					req.setAttribute("login_error", AttributeKeys.DATABASE_LOGIN_ERROR);
 					req.getRequestDispatcher("/index.jsp").forward(req, resp);
 				}
 			} catch (Throwable e) {
 				System.out.println("Database Connection Error");
-				req.setAttribute("connection_error", "Database Connection Error");
+				req.setAttribute("connection_error", AttributeKeys.DATABASE_CONNECTION_ERROR);
 				req.getRequestDispatcher("/index.jsp").forward(req, resp);
 				e.printStackTrace();
 			}

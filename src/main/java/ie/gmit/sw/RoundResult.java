@@ -67,11 +67,11 @@ public class RoundResult extends HttpServlet {
                     (String) session.getAttribute(AttributeKeys.SESSION_USER_NAME),
                     (int) session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE));
             System.out.println("Data saved successfully");
-            session.setAttribute("db_save_success", "Data saved successfully");
+            session.setAttribute("data_save_success", AttributeKeys.DATA_SAVE_SUCCESS);
 
         } catch (Throwable e) {
-            System.out.println("Database Save Error");
-            session.setAttribute("db_save_error", "Database Save Error");
+            System.out.println("Data Save Failed");
+            session.setAttribute("data_save_fail", AttributeKeys.DATA_SAVE_FAIL);
 
             e.printStackTrace();
         }
@@ -82,8 +82,6 @@ public class RoundResult extends HttpServlet {
 
     private static void showResults(HttpServletRequest request, HttpServletResponse response, ServletContext ctx)
             throws ServletException, IOException {
-
-        //request.setAttribute("userGuessWord", request.getParameter(AttributeKeys.USER_GUESS_WORD));
 
         RequestDispatcher dispatcher = ctx.getRequestDispatcher("/result.jsp");
         dispatcher.forward(request, response);
