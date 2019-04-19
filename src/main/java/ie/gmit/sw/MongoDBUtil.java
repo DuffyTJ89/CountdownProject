@@ -4,8 +4,13 @@ package ie.gmit.sw;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+
+import com.mongodb.BasicDBList;
+import com.mongodb.DBCursor;
+import com.mongodb.client.MongoCursor;
 import org.bson.Document;
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
@@ -22,8 +27,7 @@ public class MongoDBUtil {
 	private static MongoClient mongoClntObj;
 	private static MongoDatabase db;
 	
-	private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-//TODO Check unhappy path
+	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
 	// Method to make a connection to the mongodb server listening on a default port
 	private static MongoClient getConnection() throws Throwable {
@@ -66,9 +70,9 @@ public class MongoDBUtil {
 	}// searchUserInDb
 
 	// Method to save user results to the database
-	public static void saveResult(String userName, int gameScore, String dateNow) throws Throwable {
+	public static void saveResult(String userName, int gameScore) throws Throwable {
 		MongoCollection<Document> col = getDB().getCollection("games");
-		dateNow = dateFormat.format(new Date());
+		String dateNow = DATE_FORMAT.format(new Date());
 		// Add Document to Database/Collection
 
 			Document myNewDoc = new Document();// Create a new Mongo Document
@@ -78,30 +82,32 @@ public class MongoDBUtil {
 
 			col.insertOne(myNewDoc);
 			
-			FindIterable<Document> findDocs = col.find();
-			for (Document doc : findDocs) {// iterate over results of find()
-				System.out.println(doc.toJson());
-			}
+//			FindIterable<Document> findDocs = col.find();
+//			for (Document doc : findDocs) {// iterate over results of find()
+//				System.out.println(doc.toJson());
+//			}
 
-		// mongoClntObj.close();
+//		 	mongoClntObj.close();
 	}// saveResult
 	
-	public static boolean displayResults(String userName, int gameScore, String date) throws Throwable {
-		boolean docFound = false;
-		MongoCollection<Document> col = getDB().getCollection("games");
+	public static List<GameResult> getTopTen() throws Throwable {
+		List<GameResult> result = new ArrayList<>();
 
-		Document myNewDoc = new Document();
+		MongoCollection<Document> collection = getDB().getCollection("games");
 
-		System.out.println("Show Documents in database");
-		myNewDoc.append("name", userName).append("score", gameScore).append("date", date);
+        MongoCursor<Document> cur = collection.find().iterator();
 
-		FindIterable<Document> findDocs = col.find();
-		for (Document doc : findDocs) {// iterate over results of find()
-			System.out.println(doc.toJson());
-			docFound = true;
-		}
+        while (cur.hasNext()) {
+			List<Object> values = new ArrayList(cur.next().values());
 
-		return docFound;
-	}//displayResults
+			GameResult gameResult = new GameResult();
+			gameResult.userName = (String) values.get(1); //1 is name
+			gameResult.gameScore = (int) values.get(2); //2 is score
+			gameResult.date = (String) values.get(3); //3 is date
+
+			result.add(gameResult);
+        }
+		return result;
+	}//getTopTen
 
 }// MongoDBUtil

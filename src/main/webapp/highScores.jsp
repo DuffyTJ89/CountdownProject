@@ -33,7 +33,7 @@
 			<div class="col-lg-4"></div>
 			<div class="col-lg-4">
 
-				<h1 class="highscores-text">Database Highscores</h1>
+				<h1 class="highScores-text">Database Highscores</h1>
 
 				<table>
 					<tr>
@@ -42,15 +42,13 @@
 						<th>Date</th>
 					</tr>
 
-					<tr>
-						<c:forEach items="${listScores}" var="listScore">
-						<tr>
-							<td>${listScore.name}</td>
-							<td>${listScore.score}</td>
-							<td>${listScore.date}</td>
-						</tr>
-					</c:forEach>
-					</tr>
+						<c:forEach items="${topTen}" var="gameResult" >
+							<tr>
+								<td>${gameResult.userName}</td>
+								<td>${gameResult.gameScore}</td>
+								<td>${gameResult.date}</td>
+							</tr>
+						</c:forEach>
 				</table>
 
 			</div>

@@ -5,17 +5,9 @@
          version="4.0">
   <display-name>CountdownProject</display-name>
 
-    <servlet>
-        <servlet-name>MongoDBLogin</servlet-name>
-        <servlet-class>ie.gmit.sw.MongoDBLogin</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>MongoDBLogin</servlet-name>
-        <url-pattern>/MongoDBLogin</url-pattern>
-    </servlet-mapping>
-
     <!-- Welcome File List -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
 </web-app>

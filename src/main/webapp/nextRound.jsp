@@ -1,3 +1,5 @@
+<%@ page import="ie.gmit.sw.AttributeKeys" %>
+<%@ page import="ie.gmit.sw.RoundResult" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -39,17 +41,17 @@
 
             <div class="rounds-text">
                 <!-- sRoundNum sName -->
-                <h2 class="welcome">Name: ${sName}</h2>
-                <h3>Round: ${sRoundNum}/5</h3>
-                <h3>Total Score: ${sCurrentTotalScore}</h3>
+                <h2 class="welcome">Name: <%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %></h2>
+                <h3>Round: <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> / <%= RoundResult.NO_OF_ROUNDS %></h3>
+                <h3>Total Score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h3>
                 <h3 class="welcome">Your Random Letters:</h3>
-                <h2 class="rand_style">${sRandomLetters}</h2>
+                <h2 class="rand_style">${randLetters}</h2>
             </div>
 
             <div>&nbsp;</div>
 
             <div>
-                <form action="GamePlay" method="post" id="word_form">
+                <form action="RoundResult" method="post" id="word_form">
 
                     <div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i
@@ -72,7 +74,7 @@
             <div>
                 <a class="btn btn-warning btn-lg btn-block" href="rules.jsp" target="_blank">Rules</a>
                 <div>&nbsp;</div>
-                <a class="btn btn-success btn-lg btn-block" href="highScores.jsp" target="_blank">High Scores</a>
+                <a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
 
             </div>
 

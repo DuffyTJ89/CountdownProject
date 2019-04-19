@@ -28,7 +28,7 @@
 			<img src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png" alt="CountdownLogo" />
 		</div>
 
-		<h1 class="welcome">Countdown Admin Login</h1>
+		<h1 class="welcome">Countdown User Register</h1>
 
 		<div>&nbsp;</div>
 
@@ -39,7 +39,7 @@
 				<!------ MONGODB JSP & SERVLET ------>
 				<div id="login_form">
 					<form id="user_login_form" name="loginForm" method="post"
-						action="adminLogin">
+						action="UserLogin">
 						<!----- LOGIN FORM ------>
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i

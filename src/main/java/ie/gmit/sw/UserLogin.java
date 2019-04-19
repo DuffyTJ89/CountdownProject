@@ -9,17 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/adminLogin")
-public class MongoDBLogin extends HttpServlet {
+@WebServlet("/UserLogin")
+public class UserLogin extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	// This method is called by the servlet container to process a 'post' request
-	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		handleRequest(req, resp);
-	}
-
-	private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
 		// Reading post parameters from the request
 		String login = req.getParameter("login_id");
@@ -34,6 +30,7 @@ public class MongoDBLogin extends HttpServlet {
 			try {
 				boolean isUserFound = MongoDBUtil.searchUserInDb(login, pwd);
 				if (isUserFound) {
+					req.getSession().setAttribute(AttributeKeys.SESSION_USER_NAME, login);
 					req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
 				} else {
 					req.setAttribute("login_error",
@@ -47,6 +44,6 @@ public class MongoDBLogin extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-	}// handleRequest
+	}// doGet
 
-}// MongoDBLogin
+}// UserLogin

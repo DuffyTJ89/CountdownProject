@@ -13,19 +13,12 @@ public class CompareWordToLetters {
 		wordString = noListString;
 	}
 
-	public static void userGuessWord(String guessWord) {
-
-		userGuessWordFinal = guessWord;
-	}
-
-	static int compare(String userGuessWord, int gameScore) {
+	static int countRoundScore(String userGuessWord) {
 
 		userGuessWord = userGuessWord.toUpperCase();
 
 		// TODO print this line to the results page
 		System.out.println("Your word ' " + userGuessWord + " ' uses  ");
-
-		userGuessWord(userGuessWord);
 
 		// source:
 		// https://stackoverflow.com/questions/30662384/accept-2-strings-and-display-common-chars-in-them
@@ -136,9 +129,7 @@ public class CompareWordToLetters {
 		// add the user score up
 		System.out.println("Total score for this round: " + roundScore);
 
-		RoundsAndScoring.updateUserGameScore(roundScore, gameScore);
-
-		return lettersUsed;
+		return roundScore;
 
 	}
 

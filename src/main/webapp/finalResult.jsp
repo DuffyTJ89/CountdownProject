@@ -1,3 +1,4 @@
+<%@ page import="ie.gmit.sw.AttributeKeys" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,15 +34,15 @@
 
 				<div class="finalRound-text">
 					<h1>GAME OVER</h1>
-					<h2>${sName}, your final score: ${sCurrentTotalScore}</h2
+					<h2><%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>, your final score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h2
 				</div>
 
 				<div>&nbsp;</div>
 
 				<div>
-					<a class="btn btn-success btn-lg btn-block" href="highScores.jsp" target="_blank">High Scores</a>
+					<a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
 					<div>&nbsp;</div>
-					<a class="btn btn-primary btn-lg btn-block" href="welcome.jsp" target="_blank">New Game</a>
+					<a class="btn btn-primary btn-lg btn-block" href="welcome.jsp">New Game</a>
 				</div>
 
 				<div>&nbsp;</div>

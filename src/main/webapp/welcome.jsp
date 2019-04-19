@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@page import="ie.gmit.sw.RoundsAndScoring"%>
+<%@ page import="ie.gmit.sw.AttributeKeys" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -29,43 +29,22 @@
 
 		<h1 class="welcome">Welcome to online Countdown</h1>
 
-		<div>&nbsp;</div>
-
 		<div class="row">
 			<div class="col-lg-4"></div>
 			<div class="col-lg-4">
 
-				<div id="User_form">
+				<h2 class="welcome">Name: <%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %></h2>
 
-					<form action="GameSetup" method="post">
-						<!----- USER FORM ------>
-						<div class="input-group input-group-lg">
-							<span class="input-group-addon"> <i
-								class="glyphicon glyphicon-user"></i>
-							</span> <input type="text" name="userName" class="form-control"
-								placeholder="Enter Your Name ..." maxlength="20">
-								<input type="hidden" name="roundId" id="roundId" value="0"/>
-						</div>
+				<div>&nbsp;</div>
 
-						<div>&nbsp;</div>
-
-						<!----- SUBMIT BUTTON ------>
-						<button id="submit_btn" type="submit"
-							class="btn btn-primary btn-lg btn-block">New Game</button>
-					</form>
-				</div>
+				<a class="btn btn-primary btn-lg btn-block" href="NewGame">New Game</a>
 
 				<div>&nbsp;</div>
 
 				<div>
 					<a class="btn btn-warning btn-lg btn-block" href="rules.jsp" target="_blank">Rules</a>
 					<div>&nbsp;</div>
-					<a class="btn btn-success btn-lg btn-block" href="highScores.jsp" target="_blank">High Scores</a>
-
-					<form action="DisplayHighscores" method="Post">
-						<input type="submit" name="action" value="HighScores">
-
-					</form>
+					<a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
 				</div>
 
 			</div>

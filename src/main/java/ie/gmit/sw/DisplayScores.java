@@ -8,31 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
+@WebServlet("/DisplayScores")
+public class DisplayScores extends HttpServlet {
 
-@WebServlet("/DisplayHighscores")
-public class DisplayHighscores extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-
-    }
+    private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("we are in servlet");
 
-
-
-
-        request.getAttribute("name", userName);
-        request.getAttribute("score", gameScore);
-        request.getAttribute("date", date);
-
-        //display database results
         try {
-            request.setAttribute("listScores", MongoDBUtil.displayResults(userName, gameScore, date));
-            //request.setAttribute("listScores", new MongoDBUtil().displayResults(userName, gameScore, date));
-            //MongoDBUtil.displayResults(userName, gameScore, date);
+            List<GameResult> topTen = MongoDBUtil.getTopTen();
+            request.setAttribute("topTen", topTen);
+            //MongoDBUtil.getTopTen();
             System.out.println("Data displayed successfully");
         } catch (Throwable throwable) {
             System.out.println("Data displayed failed");
