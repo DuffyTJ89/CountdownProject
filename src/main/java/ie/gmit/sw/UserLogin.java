@@ -1,5 +1,4 @@
-//source:
-//https://examples.javacodegeeks.com/software-development/mongodb/mongodb-and-jsp-servlet-example/
+//source: https://examples.javacodegeeks.com/software-development/mongodb/mongodb-and-jsp-servlet-example/
 package ie.gmit.sw;
 
 import java.io.IOException;

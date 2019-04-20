@@ -32,9 +32,9 @@
 			<div class="col-lg-4"></div>
 			<div class="col-lg-4">
 
-				<div class="finalRound-text">
-					<h1>GAME OVER</h1>
-					<h2><%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>, your final score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h2
+				<div>
+					<h1 class="finalRound-header">GAME OVER</h1>
+					<h2 class="finalRound-name"><%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>, your final score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h2
 				</div>
 
 				<div>&nbsp;</div>
@@ -42,7 +42,7 @@
 				<div>
 					<a class="btn btn-primary btn-lg btn-block" href="welcome.jsp">New Game</a>
 					<div>&nbsp;</div>
-					<a class="btn btn-danger btn-lg btn-block" href="index.jsp">Log Out</a>
+					<a class="btn btn-warning btn-lg btn-block" href="index.jsp">Log Out</a>
 					<div>&nbsp;</div>
 					<a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
 				</div>

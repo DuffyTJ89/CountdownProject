@@ -1,15 +1,10 @@
-//source:
-//https://examples.javacodegeeks.com/software-development/mongodb/mongodb-and-jsp-servlet-example/
+//source: https://examples.javacodegeeks.com/software-development/mongodb/mongodb-and-jsp-servlet-example/
 package ie.gmit.sw;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-
-import com.mongodb.BasicDBList;
-import com.mongodb.DBCursor;
 import com.mongodb.client.MongoCursor;
 import org.bson.Document;
 import com.mongodb.BasicDBObject;
@@ -84,8 +79,8 @@ public class MongoDBUtil {
 	}//saveResult
 
 	//http://zetcode.com/db/mongodbjava/
-	public static List<GameResult> getTopTen() throws Throwable {
-		List<GameResult> result = new ArrayList<>();
+	public static List<GameToDatabase> getTopTen() throws Throwable {
+		List<GameToDatabase> result = new ArrayList<>();
 
 		MongoCollection<Document> collection = getDB().getCollection("games");
 
@@ -94,7 +89,7 @@ public class MongoDBUtil {
         while (cur.hasNext()) {
 			List<Object> values = new ArrayList(cur.next().values());
 
-			GameResult gameResult = new GameResult();
+			GameToDatabase gameResult = new GameToDatabase();
 			gameResult.userName = (String) values.get(1); //1 is name
 			gameResult.gameScore = (int) values.get(2); //2 is score
 			gameResult.date = (String) values.get(3); //3 is date

@@ -5,6 +5,7 @@ public class AttributeKeys {
     public static final String SESSION_TOTAL_SCORE = "s_totalScore";
     public static final String SESSION_ROUND_NUM = "s_roundNum";
 
+    public static final String USER_ROUND_SCORE = "userRoundScore";
     public static final String USER_GUESS_WORD = "userGuessWord";
 
     public static final String DATABASE_LOGIN_ERROR = "You are not an authorised user. Please check with administrator";

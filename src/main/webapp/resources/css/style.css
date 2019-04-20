@@ -7,8 +7,11 @@ body {
 .rounds-text {
     color: white !important;
 }
-.finalRound-text {
+.finalRound-header {
     color: red !important;
+}
+.finalRound-name {
+    color: #00ffd5 !important;
 }
 .rules-text {
     color: white !important;

@@ -35,8 +35,7 @@ public class RoundResult extends HttpServlet {
         }
     }
 
-    private static void resolveRound(HttpServletRequest request)
-            throws IOException {
+    private static void resolveRound(HttpServletRequest request) throws IOException {
 
         HttpSession session = request.getSession();
 
@@ -51,6 +50,7 @@ public class RoundResult extends HttpServlet {
         }
         // else - not needed as the values are already initialized for this case
 
+        request.setAttribute(AttributeKeys.USER_ROUND_SCORE, roundScore);
         session.setAttribute(AttributeKeys.SESSION_TOTAL_SCORE, currentTotalScore + roundScore);
     }
 

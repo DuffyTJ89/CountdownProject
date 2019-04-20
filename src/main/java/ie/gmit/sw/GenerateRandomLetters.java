@@ -1,5 +1,4 @@
-// source :
-// https://stackoverflow.com/questions/32043539/how-to-randomly-select-7-lettersa-to-z-in-java
+//source : https://stackoverflow.com/questions/32043539/how-to-randomly-select-7-lettersa-to-z-in-java
 package ie.gmit.sw;
 
 import java.util.Arrays;

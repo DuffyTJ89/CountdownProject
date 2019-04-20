@@ -1,6 +1,6 @@
 package ie.gmit.sw;
 
-public class GameResult {
+public class GameToDatabase {
 
     String userName;
     int gameScore;

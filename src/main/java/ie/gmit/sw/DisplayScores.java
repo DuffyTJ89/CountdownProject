@@ -17,15 +17,13 @@ public class DisplayScores extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("we are in servlet");
-
         try {
-            List<GameResult> topTen = MongoDBUtil.getTopTen();
+            List<GameToDatabase> topTen = MongoDBUtil.getTopTen();
             request.setAttribute("topTen", topTen);
             //MongoDBUtil.getTopTen();
             System.out.println("Data displayed successfully");
         } catch (Throwable throwable) {
-            System.out.println("Data displayed failed");
+            System.out.println("Data display failed");
             throwable.printStackTrace();
         }
         ServletContext ctx = getServletContext();

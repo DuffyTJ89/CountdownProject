@@ -34,14 +34,14 @@
 
 				<div class="rounds-text">
 					<!-- sRoundNum sName -->
-					<h2 class="welcome"><%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>'s round
-						<%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> score:${sRoundScore} </h2>
+					<h2 class="welcome"><%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>'s
+						round <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %>
+						score: <%= request.getAttribute(AttributeKeys.USER_ROUND_SCORE) %></h2>
 					<h3>Your word: <%= request.getParameter(AttributeKeys.USER_GUESS_WORD) %></h3>
 					<h3>Total Score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h3>
 				</div>
 
 				<a class="btn btn-primary btn-lg btn-block" href="GamePlay">Next</a>
-
 
 				<div>&nbsp;</div>
 
