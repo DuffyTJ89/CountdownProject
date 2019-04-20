@@ -44,7 +44,7 @@
                 <h2 class="welcome">Name: <%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %></h2>
                 <h3>Round: <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> / <%= RoundResult.NO_OF_ROUNDS %></h3>
                 <h3>Total Score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h3>
-                <h3 class="welcome">Your Random Letters:</h3>
+                <h3 class="welcome">Random Letters:</h3>
                 <h2 class="rand_style">${randLetters}</h2>
             </div>
 

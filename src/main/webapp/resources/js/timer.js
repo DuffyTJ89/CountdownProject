@@ -1,5 +1,5 @@
 //https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
-$("document").ready(function(){
+$(document).ready(function() {
     var time_left = "30";
     var downloadTimer = setInterval(function() {
         time_left--;
