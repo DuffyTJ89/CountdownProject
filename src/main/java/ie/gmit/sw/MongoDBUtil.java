@@ -84,7 +84,7 @@ public class MongoDBUtil {
 
 		MongoCollection<Document> collection = getDB().getCollection("games");
 
-        MongoCursor<Document> cur = collection.find().iterator();
+        MongoCursor<Document> cur = collection.find().sort( new BasicDBObject( "score" , -1 ) ).limit(10).iterator();
 
         while (cur.hasNext()) {
 			List<Object> values = new ArrayList(cur.next().values());

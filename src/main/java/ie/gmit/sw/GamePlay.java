@@ -25,6 +25,7 @@ public class GamePlay extends HttpServlet {
 
     public static void nextRound(HttpServletRequest request, HttpServletResponse response, ServletContext ctx)
             throws ServletException, IOException {
+
         List<String> randomLetters = GenerateRandomLetters.list();
         String randomLettersStr = String.join(" ", randomLetters);
 
