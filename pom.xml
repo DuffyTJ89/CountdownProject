@@ -26,7 +26,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.2</version>
                 <configuration>
-                    <warName>CountdownProject-1.0</warName>
+                    <archiveClasses>true</archiveClasses>
                 </configuration>
             </plugin>
         </plugins>
@@ -73,20 +73,6 @@
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-core</artifactId>
-            <version>3.10.1</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-async -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-async</artifactId>
-            <version>3.10.1</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
             <version>3.10.1</version>
         </dependency>
 

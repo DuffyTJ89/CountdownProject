@@ -52,7 +52,7 @@
                     </div>
 
                     <div>&nbsp;</div>
-                    <button id="submit_btn" type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+                    <button id="submit_btn" type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
                 </form>
             </div>
 
