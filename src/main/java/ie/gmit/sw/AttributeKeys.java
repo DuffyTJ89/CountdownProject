@@ -8,7 +8,7 @@ public class AttributeKeys {
     public static final String USER_ROUND_SCORE = "userRoundScore";
     public static final String USER_GUESS_WORD = "userGuessWord";
 
-    public static final String DATABASE_LOGIN_ERROR = "You are not an authorised user. Please check with administrator";
+    public static final String DATABASE_LOGIN_ERROR = "Please enter correct Name and Password";
     public static final String DATABASE_CONNECTION_ERROR = "Database Connection Error";
     public static final String DATA_SAVE_SUCCESS = "Data Saved Successfully";
     public static final String DATA_SAVE_FAIL = "Data Save Failed";

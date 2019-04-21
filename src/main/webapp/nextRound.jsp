@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Online Countdown Test</title>
+    <title>Next Round</title>
     <!-- Bootstrap -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -39,13 +39,10 @@
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
 
-            <div class="rounds-text">
-                <!-- sRoundNum sName -->
-                <h2 class="welcome">Name: <%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %></h2>
-                <h3>Round: <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> / <%= RoundResult.NO_OF_ROUNDS %></h3>
-                <h3>Total Score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h3>
-                <h3 class="welcome">Random Letters:</h3>
-                <h2 class="rand_style">${randLetters}</h2>
+            <div>
+                <h3 class="white-text">Round: <span class="rounds-text"> <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> / <%= RoundResult.NO_OF_ROUNDS %> </span></h3>
+                <h3 class="white-text">Game Score: <span class="total-score-text"> <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %> </span></h3>
+                <h3 class="white-text">Letters: <span class="rand-letters-text"> ${randLetters} </span></h3>
             </div>
 
             <div>&nbsp;</div>
@@ -74,8 +71,7 @@
             <div>
                 <a class="btn btn-warning btn-lg btn-block" href="rules.jsp" target="_blank">Rules</a>
                 <div>&nbsp;</div>
-                <a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
-
+                <a class="btn btn-success btn-lg btn-block" href="DisplayHighScores" target="_blank">High Scores</a>
             </div>
 
         </div>

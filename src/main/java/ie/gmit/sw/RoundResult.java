@@ -19,7 +19,7 @@ public class RoundResult extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    public static final int NO_OF_ROUNDS = 5;
+    public static final int NO_OF_ROUNDS = 2;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

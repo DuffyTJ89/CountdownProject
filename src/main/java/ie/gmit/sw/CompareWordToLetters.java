@@ -6,7 +6,6 @@ import java.util.Set;
 public class CompareWordToLetters {
 
 	static String wordString = "";
-	static String userGuessWordFinal = "";
 
 	public static void listToString(String noListString) {
 
@@ -17,11 +16,9 @@ public class CompareWordToLetters {
 
 		userGuessWord = userGuessWord.toUpperCase();
 
-		// TODO print this line to the results page
-		System.out.println("Your word ' " + userGuessWord + " ' uses  ");
+		System.out.println("user guess word ' " + userGuessWord + " ' uses  ");
 
-		// source:
-		// https://stackoverflow.com/questions/30662384/accept-2-strings-and-display-common-chars-in-them
+		// source: https://stackoverflow.com/questions/30662384/accept-2-strings-and-display-common-chars-in-them
 		// check how many letter the user uses
 
 		Set<Character> set1 = new HashSet<Character>();
@@ -123,14 +120,11 @@ public class CompareWordToLetters {
 			}
 
 		}
-		int lettersUsed = set1.size();
 
 		// *************************//
 		// add the user score up
 		System.out.println("Total score for this round: " + roundScore);
 
 		return roundScore;
-
 	}
-
 }

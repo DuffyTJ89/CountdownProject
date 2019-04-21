@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>HighScores</title>
+<title>High Scores</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -33,9 +33,7 @@
 			<div class="col-lg-4"></div>
 			<div class="col-lg-4">
 
-				<h1 class="highScores-text">Database Highscores</h1>
-
-				<div>&nbsp;</div>
+				<h1 class="red-text">Database High Scores</h1>
 
 				<table class="table">
 					<thead>

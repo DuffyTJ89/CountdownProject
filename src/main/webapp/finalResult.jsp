@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Results</title>
+<title>Final Result</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -33,8 +33,12 @@
 			<div class="col-lg-4">
 
 				<div>
-					<h1 class="finalRound-header">GAME OVER</h1>
-					<h2 class="finalRound-name"><%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>, your final score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h2
+					<h1 class="game-over-text">GAME OVER</h1>
+					<h3 class="white-text"> <span class="name-text"> <%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>'s </span>
+						round <span class="rounds-text"> <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> </span>
+						score: <span class="total-score-text"> <%= request.getAttribute(AttributeKeys.USER_ROUND_SCORE) %> </span></h3>
+					<h3 class="white-text">Guess Word: <span class="rand-letters-text"> <%= request.getParameter(AttributeKeys.USER_GUESS_WORD) %> </span></h3>
+					<h3 class="white-text">Final Game Score: <span class="total-score-text"> <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %> </span></h3>
 				</div>
 
 				<div>&nbsp;</div>
@@ -44,7 +48,7 @@
 					<div>&nbsp;</div>
 					<a class="btn btn-warning btn-lg btn-block" href="index.jsp">Log Out</a>
 					<div>&nbsp;</div>
-					<a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
+					<a class="btn btn-success btn-lg btn-block" href="DisplayHighScores" target="_blank">High Scores</a>
 				</div>
 
 				<div>&nbsp;</div>

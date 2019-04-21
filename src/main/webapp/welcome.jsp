@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CountdownApp</title>
+<title>Welcome</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -17,7 +17,7 @@
 <script type="text/javascript" src="resources/js/loader.js"></script>
 </head>
 
-<body class="text-center">
+<body class="text-center text-white">
 	<div class="container-fluid">
 		<div id="loading-bg"></div>
 
@@ -27,13 +27,13 @@
             <img src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png" alt="CountdownLogo" />
         </div>
 
-		<h1 class="welcome">Welcome to online Countdown</h1>
-
 		<div class="row">
 			<div class="col-lg-4"></div>
-			<div class="col-lg-4">
+			<div class="text-white col-lg-4">
 
-				<h2 class="welcome">Name: <%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %></h2>
+				<h1 class="red-text">Welcome to Countdown</h1>
+
+				<h3 class="white-text">Name: <span class="name-text"> <%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %> </span></h3>
 
 				<div>&nbsp;</div>
 
@@ -44,7 +44,7 @@
 				<div>
 					<a class="btn btn-warning btn-lg btn-block" href="rules.jsp" target="_blank">Rules</a>
 					<div>&nbsp;</div>
-					<a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
+					<a class="btn btn-success btn-lg btn-block" href="DisplayHighScores" target="_blank">High Scores</a>
 				</div>
 
 			</div>

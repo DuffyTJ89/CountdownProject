@@ -32,14 +32,15 @@
 			<div class="col-lg-4"></div>
 			<div class="col-lg-4">
 
-				<div class="rounds-text">
-					<!-- sRoundNum sName -->
-					<h2 class="welcome"><%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>'s
-						round <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %>
-						score: <%= request.getAttribute(AttributeKeys.USER_ROUND_SCORE) %></h2>
-					<h3>Your word: <%= request.getParameter(AttributeKeys.USER_GUESS_WORD) %></h3>
-					<h3>Total Score: <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %></h3>
+				<div>
+					<h3 class="white-text"> <span class="name-text"> <%= session.getAttribute(AttributeKeys.SESSION_USER_NAME) %>'s </span>
+						round <span class="rounds-text"> <%= session.getAttribute(AttributeKeys.SESSION_ROUND_NUM) %> </span>
+						score: <span class="total-score-text"> <%= request.getAttribute(AttributeKeys.USER_ROUND_SCORE) %> </span></h3>
+					<h3 class="white-text">Guess Word: <span class="rand-letters-text"> <%= request.getParameter(AttributeKeys.USER_GUESS_WORD) %> </span></h3>
+					<h3 class="white-text">Game Score: <span class="total-score-text"> <%= session.getAttribute(AttributeKeys.SESSION_TOTAL_SCORE) %> </span></h3>
 				</div>
+
+				<div>&nbsp;</div>
 
 				<a class="btn btn-primary btn-lg btn-block" href="GamePlay">Next</a>
 
@@ -48,7 +49,7 @@
 				<div>
 					<a class="btn btn-warning btn-lg btn-block" href="rules.jsp" target="_blank">Rules</a>
 					<div>&nbsp;</div>
-					<a class="btn btn-success btn-lg btn-block" href="DisplayScores" target="_blank">High Scores</a>
+					<a class="btn btn-success btn-lg btn-block" href="DisplayHighScores" target="_blank">High Scores</a>
 				</div>
 
 			</div>

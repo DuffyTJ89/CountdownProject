@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/DisplayScores")
-public class DisplayScores extends HttpServlet {
+@WebServlet("/DisplayHighScores")
+public class DisplayHighScores extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 

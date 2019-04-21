@@ -1,31 +1,39 @@
 body {
     background: navy !important;
 }
-.welcome {
+.white-text {
+    color: white !important;
+}
+.red-text {
     color: red !important;
+}
+.name-text {
+    color: #00ff14 !important;
+    font-weight: bold;
+    font-size: 130%;
 }
 .rounds-text {
-    color: white !important;
-}
-.finalRound-header {
     color: red !important;
+    font-weight: bold;
+    font-size: 130%;
 }
-.finalRound-name {
+.total-score-text {
+    color: #ffcd00 !important;
+    font-weight: bold;
+    font-size: 130%;
+}
+.rand-letters-text {
     color: #00ffd5 !important;
+    font-weight: bold;
+    font-size: 130%;
+}
+.game-over-text {
+    color: red !important;
+    font-weight: bold;
+    font-size: 350%;
 }
 .rules-text {
-    color: white !important;
-}
-.highScores-text {
-    color: red !important;
-}
-.lettersValueHeader-text {
-    color: red !important;
-}
-.rand_style {
-    font-weight: bold;
-    font-size: 240%;
-    color: #00ffd5;
+    color: #00ffd5 !important;
 }
 /*loader background*/
 #loading-bg {
@@ -57,17 +65,17 @@ body {
     border-color: darkred;
     resize: none;
     font-weight: bold;
-    color: #ffd200;
+    color: #ffd200 !important;
     font-size: 550%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 101;
 }
 thead {
-    color: #34ff1e;
+    color: #ffe724 !important;
     font-size: 150%;
 }
 tbody tr {
-    color: #2ad1c2;
+    color: #03f3ff !important;
     font-size: 150%;
     transition: background-color .5s;
 }

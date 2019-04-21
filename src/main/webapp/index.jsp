@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Countdown Secure Connection</title>
+<title>Login</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -28,19 +28,18 @@
 			<img src="${pageContext.request.contextPath}/resources/images/CountDownLogo.png" alt="CountdownLogo" />
 		</div>
 
-		<h1 class="welcome">Countdown User Register</h1>
-
-		<div>&nbsp;</div>
-
 		<div class="row">
 			<div class="col-lg-4"></div>
 			<div class="col-lg-4">
 
-				<!------ MONGODB JSP & SERVLET ------>
+				<h1 class="red-text">Countdown User Login</h1>
+
+				<div>&nbsp;</div>
+
 				<div id="login_form">
-					<form id="user_login_form" name="loginForm" method="post"
+					<form id="user_login_form" name="UserLogin" method="post"
 						action="UserLogin">
-						<!----- LOGIN FORM ------>
+
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input type="text"
@@ -57,14 +56,12 @@
 								placeholder="Enter Password ..." name="login_pwd">
 						</div>
 
-						<!----- SUBMIT BUTTON ------>
 						<div>&nbsp;</div>
 						<button id="submit_btn" type="submit"
-							class="btn btn-primary btn-lg btn-block">Confirm
-							identity</button>
+							class="btn btn-primary btn-lg btn-block">Log In</button>
 					</form>
 				</div>
-
+				
 				<div>&nbsp;</div>
 
 				<div align="center">
