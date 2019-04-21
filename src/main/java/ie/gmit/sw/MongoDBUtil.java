@@ -5,13 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import com.mongodb.client.MongoCursor;
+
+import com.mongodb.client.*;
 import org.bson.Document;
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 
 public class MongoDBUtil {
 
@@ -39,10 +37,9 @@ public class MongoDBUtil {
 		return db;
 	}
 
-	// Method to search a user in the mongodb
+	// search a user in the mongodb
 	public static boolean searchUserInDb(String loginId, String loginPwd) throws Throwable {
 		boolean userFound = false;
-
 		// Get the mongodb collection.
 		MongoCollection<Document> col = getDB().getCollection("user");
 
@@ -50,21 +47,49 @@ public class MongoDBUtil {
 		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
 		obj.add(new BasicDBObject("id", loginId));
 		obj.add(new BasicDBObject("pwd", loginPwd));
-
 		// Form a where query
 		BasicDBObject whereQuery = new BasicDBObject();
 		whereQuery.put("$and", obj);
-		System.out.println("Mongo query: " + whereQuery.toString());
+		System.out.println("Mongo login query: " + whereQuery.toString());
 
 		FindIterable<Document> cursor = col.find(whereQuery);
 		for (Document doc : cursor) {
-			System.out.println("Found?: " + doc);
+			System.out.println("User Login Found: " + doc);
 			userFound = true;
 		}
 		return userFound;
-	}// searchUserInDb
+	}
 
-	// Method to save user results to the database
+	// search a user in the mongodb by name
+	public static boolean searchUserByName(String loginId) throws Throwable {
+		boolean userFound = false;
+
+		MongoCollection<Document> col = getDB().getCollection("user");
+
+		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
+		obj.add(new BasicDBObject("id", loginId));
+
+		BasicDBObject whereQuery = new BasicDBObject();
+		whereQuery.put("$and", obj);
+		System.out.println("Mongo signup query: " + whereQuery.toString());
+
+		FindIterable<Document> cursor = col.find(whereQuery);
+		for (Document doc : cursor) {
+			System.out.println("User SignUp Found: " + doc);
+			userFound = true;
+		}
+		return userFound;
+	}// searchUserByName
+
+	//save new user to database
+	public static void userSignedUp(String UserName, String UserPassword) throws Throwable {
+		MongoCollection<Document> col = getDB().getCollection("user");
+		Document myNewDoc = new Document();
+		myNewDoc.append("id", UserName).append("pwd", UserPassword);
+		col.insertOne(myNewDoc);
+	}
+
+	// save user results to the database
 	public static void saveResult(String userName, int gameScore) throws Throwable {
 		MongoCollection<Document> col = getDB().getCollection("games");
 		String dateNow = DATE_FORMAT.format(new Date());
@@ -76,7 +101,7 @@ public class MongoDBUtil {
 			myNewDoc.append("name", userName).append("score", gameScore).append("date", dateNow);
 
 			col.insertOne(myNewDoc);
-	}//saveResult
+	}
 
 	//http://zetcode.com/db/mongodbjava/
 	public static List<GameToDatabase> getTopTen() throws Throwable {

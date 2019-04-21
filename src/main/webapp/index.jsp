@@ -37,8 +37,7 @@
 				<div>&nbsp;</div>
 
 				<div id="login_form">
-					<form id="user_login_form" name="UserLogin" method="post"
-						action="UserLogin">
+					<form id="user_login_form" name="UserLogin" method="post" action="UserLogin">
 
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i
@@ -58,10 +57,14 @@
 
 						<div>&nbsp;</div>
 						<button id="submit_btn" type="submit"
-							class="btn btn-primary btn-lg btn-block">Log In</button>
+							class="btn btn-success btn-lg btn-block">Log In</button>
 					</form>
 				</div>
-				
+
+				<div>&nbsp;</div>
+
+				<a class="btn btn-primary btn-lg btn-block" href="signUp.jsp">Sign Up</a>
+
 				<div>&nbsp;</div>
 
 				<div align="center">
