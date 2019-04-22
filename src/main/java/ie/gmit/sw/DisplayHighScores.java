@@ -20,9 +20,9 @@ public class DisplayHighScores extends HttpServlet {
         try {
             List<GameToDatabase> topTen = MongoDBUtil.getTopTen();
             request.setAttribute("topTen", topTen);
-            //MongoDBUtil.getTopTen();
             System.out.println("Data displayed successfully");
         } catch (Throwable throwable) {
+            request.setAttribute("connection_error", AttributeKeys.DATABASE_CONNECTION_ERROR);
             System.out.println("Data display failed");
             throwable.printStackTrace();
         }

@@ -16,6 +16,7 @@
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/loader.js"></script>
+<script type="text/javascript" src="resources/js/messages.js"></script>
 </head>
 
 <body class="text-center">
@@ -34,6 +35,7 @@
 			<div class="col-lg-4">
 
 				<h1 class="red-text">Database High Scores</h1>
+				<h3 id="conErr" class="p-3 mb-2 text-danger">${connection_error}</h3>
 
 				<table class="table">
 					<thead>
