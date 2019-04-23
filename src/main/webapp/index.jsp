@@ -37,7 +37,7 @@
 				<div>&nbsp;</div>
 
 				<div id="login_form">
-					<form id="user_login_form" name="UserLogin" method="post" action="UserLogin">
+					<form id="user_login_form" action="UserLogin" method="post" >
 
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon"><i

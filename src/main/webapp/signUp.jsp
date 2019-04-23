@@ -37,7 +37,7 @@
             <div>&nbsp;</div>
 
             <div id="signup_form">
-                <form id="user_signup_form" name="UserSignUp" method="post" action="UserSignUp">
+                <form id="user_signup_form" action="UserSignUp" method="post" >
 
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
