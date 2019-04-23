@@ -48,7 +48,7 @@
             <div>&nbsp;</div>
 
             <div>
-                <form action="RoundResult" method="post" id="word_form">
+                <form id="word_form" action="RoundResult" method="post" >
 
                     <div class="input-group input-group-lg">
 							<span class="input-group-addon"> <i

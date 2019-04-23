@@ -37,7 +37,7 @@ public class MongoDBUtil {
 		return db;
 	}
 
-	// search a user in the mongodb
+	// search a user in the mongodb by name and password
 	public static boolean searchUserInDb(String loginId, String loginPwd) throws Throwable {
 		boolean userFound = false;
 		// Get the mongodb collection.

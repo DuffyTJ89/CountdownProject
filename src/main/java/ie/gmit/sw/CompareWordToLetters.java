@@ -120,7 +120,6 @@ public class CompareWordToLetters {
 			}
 
 		}
-
 		// *************************//
 		// add the user score up
 		System.out.println("Total score for this round: " + roundScore);
