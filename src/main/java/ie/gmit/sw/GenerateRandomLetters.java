@@ -9,12 +9,12 @@ public class GenerateRandomLetters {
 
 	static List<String> list() {
 		// create 10 random letters for the user to use
-		String[] abArr = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
+		String[] alphabetArr = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
 				"S", "T", "U", "V", "W", "X", "Y", "Z" };
-		List<String> adList = Arrays.asList(abArr);
-		Collections.shuffle(adList);
+		List<String> alphabetList = Arrays.asList(alphabetArr);
+		Collections.shuffle(alphabetList);
 
-		List<String> randLetters = adList.subList(0, 10);
+		List<String> randLetters = alphabetList.subList(0, 10);
 
 		String noListString = String.join("", randLetters); // change from list to normal string to compare
 
