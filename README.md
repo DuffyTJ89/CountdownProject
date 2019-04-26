@@ -43,6 +43,8 @@ Steps to create the application:
 9) Run the application
 10) Sign up to create users to log in and play the game
 
+___
+
 Our Countdown WebApp uses JSP as a front end, Java for the backend which does all the logic of the game and mongoDB as our database. We use TomCat as our server.
 
 The application can be run locally and is also hosted on AWS. We chose Amazon Web Service as our cloud hosting service for our application, because it offers low cost, high levels of reliability and fast performance.
