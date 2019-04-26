@@ -5,6 +5,7 @@ The goal was to create a three-tier application which includes a front-end, back
 
 We chose countdown because we thought it was a good game to try to implement in a WebApp. The rules are easy to understand from a logic perspective and we were able to change them around a bit to offer a bit more variety in our scoring system. We felt it would be a good demonstration of the skills we have picked up over the last 4 years of college.
 
+##### 
 The application starts by asking a user to either login or signup with a new account. After either a successful login or signup the user is redirected to a welcome page.
 
 From here the player can start a new game. Each player will play through three rounds trying to pick up as many points as possible by using as many of their randomly generated letters as possible.
